@@ -7,7 +7,7 @@ for path in */; do
     echo $path
     if ! [ -d "./build" ]; then
       file_name=${path::-1}
-      file_name=${file_name/-/_}
+      file_name=${file_name//-/_}
       echo $file_name
       touch $file_name.h $file_name.cpp
       echo $file_name

@@ -3,7 +3,7 @@
 #include <boost/test/unit_test.hpp>
 
 using namespace std;
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 BOOST_AUTO_TEST_CASE(test1) {
     vector<unsigned int> in_digits{0};
     vector<unsigned int> out_digits = all_your_base::convert(10, in_digits, 2);
@@ -12,7 +12,7 @@ BOOST_AUTO_TEST_CASE(test1) {
                                     out_digits.begin(), out_digits.end());
 }
 
-
+#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(single_bit_one_to_decimal) {
     vector<unsigned int> in_digits{1};
     vector<unsigned int> expected{1};
