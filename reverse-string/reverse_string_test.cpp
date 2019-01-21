@@ -7,7 +7,6 @@ BOOST_AUTO_TEST_CASE(an_empty_string)
     BOOST_REQUIRE_EQUAL("", reverse_string::reverse_string(""));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(a_word)
 {
     BOOST_REQUIRE_EQUAL("tobor", reverse_string::reverse_string("robot"));
@@ -27,4 +26,5 @@ BOOST_AUTO_TEST_CASE(a_palindrome)
 {
    BOOST_REQUIRE_EQUAL("racecar", reverse_string::reverse_string("racecar"));
 }
+#if defined(EXERCISM_RUN_ALL_TESTS)
 #endif

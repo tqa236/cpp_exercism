@@ -5,7 +5,6 @@
 using namespace std;
 
 int squares::square_of_sum(int num){
-    // return 225;
     return pow((num * (num+1))/2,2);
   }
 int squares::sum_of_squares(int num){
