@@ -1,8 +1,9 @@
 #include <string>
+#include "boost/date_time/posix_time/posix_time.hpp"
+
 using namespace std;
+using namespace boost::posix_time;
 
 namespace gigasecond {
-
-int convert(unsigned int in_base, string in_digits, unsigned int out_base);
-
+  ptime advance(ptime);
 }
