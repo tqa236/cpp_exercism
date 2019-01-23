@@ -14,7 +14,6 @@ BOOST_AUTO_TEST_CASE(has_no_nucleotides)
     BOOST_TEST(expected == actual);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(has_no_adenosine)
 {
     const dna::counter dna("");
@@ -28,7 +27,6 @@ BOOST_AUTO_TEST_CASE(repetitive_cytidine_gets_counts)
 
     BOOST_REQUIRE_EQUAL(5, dna.count('C'));
 }
-
 BOOST_AUTO_TEST_CASE(repetitive_sequence_has_only_guanosine)
 {
     const dna::counter dna("GGGGGGGG");
@@ -38,7 +36,6 @@ BOOST_AUTO_TEST_CASE(repetitive_sequence_has_only_guanosine)
 
     BOOST_TEST(expected == actual);
 }
-
 BOOST_AUTO_TEST_CASE(counts_only_thymidine)
 {
     const dna::counter dna("GGGGTAACCCGG");
@@ -54,7 +51,6 @@ BOOST_AUTO_TEST_CASE(counts_a_nucleotide_only_once)
 
     BOOST_REQUIRE_EQUAL(2, dna.count('T'));
 }
-
 BOOST_AUTO_TEST_CASE(validates_nucleotides)
 {
     const dna::counter dna("GGTTGG");
@@ -76,4 +72,5 @@ BOOST_AUTO_TEST_CASE(counts_all_nucleotides)
 
     BOOST_TEST(expected == actual);
 }
+#if defined(EXERCISM_RUN_ALL_TESTS)
 #endif

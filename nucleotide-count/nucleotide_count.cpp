@@ -5,15 +5,18 @@
 using namespace std;
 
 namespace dna {
-  class counter{
-    string dna;
-    public:
-      counter(string a_dna){
-        dna = a_dna;
-      }
-      const std::map<char, int> nucleotide_counts(){
-        const std::map<char, int> expected{ {'A', 0}, {'T', 0}, {'C', 0}, {'G', 0} };
-        return expected;
-      };
+  map<char, int> counter::nucleotide_counts() const{
+  	return { { 'A', count('A') }, { 'T', count('T') }, { 'C', count('C') }, { 'G', count('G') } };
+  }
+  int counter::count(char c) const{
+    const string nucleotides = "ATCG";
+    if (nucleotides.find(c) == std::string::npos){
+      throw invalid_argument("This is not a nucleotide name.");
+    }
+    int cnt = 0;
+    for (unsigned int i = 0; i < dna_string.size(); i++){
+      if (dna_string[i] == c) cnt++;
+    }
+    return cnt;
   }
 }
