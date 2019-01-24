@@ -19,7 +19,6 @@ const string to_rna(string const dna){
         for(const char& c : dna) {
                 rna = rna + rna_map[c];
         }
-        cout << rna;
         return rna;
 }
 }
