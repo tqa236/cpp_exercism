@@ -1,20 +1,25 @@
 #include <iostream>
 #include <string>
-
+#include <map>
 #include "rna_transcription.h"
 
 using namespace std;
-
-const char * transcription::to_rna(const string& dna){
-    char rna = 'G';
-    // map<char, char> rna_map = {
-    // { 'A', '1' },
-    // { 'B', '2' },
-    // { 'C', 'G' }
-    // };
-    //
-    // for(char& c : dna) {
-    //   rna += rna_map[c];
-    // }
-    return rna;
-  }
+namespace transcription {
+map<char, char> rna_map = {
+        { 'A', 'U' },
+        { 'C', 'G' },
+        { 'G', 'C' },
+        { 'T', 'A' }
+};
+char to_rna(char dna){
+        return rna_map[dna];
+}
+const string to_rna(string const dna){
+        string rna = "";
+        for(const char& c : dna) {
+                rna = rna + rna_map[c];
+        }
+        cout << rna;
+        return rna;
+}
+}

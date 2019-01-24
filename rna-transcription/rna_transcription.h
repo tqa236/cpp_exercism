@@ -3,5 +3,6 @@
 using namespace std;
 
 namespace transcription {
-  const char * to_rna(const string&);
+char to_rna(char);
+const string to_rna(const string);
 }
