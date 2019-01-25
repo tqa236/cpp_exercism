@@ -1,9 +1,8 @@
-#include <string>
+#pragma once
 #include "boost/date_time/posix_time/posix_time.hpp"
 
-using namespace std;
-using namespace boost::posix_time;
+using boost::posix_time::ptime;
 
 namespace gigasecond {
-  ptime advance(ptime);
+  ptime advance(const ptime &);
 }
