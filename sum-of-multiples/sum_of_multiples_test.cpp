@@ -7,26 +7,25 @@ BOOST_AUTO_TEST_CASE(sum_to_1_yields_0)
     BOOST_REQUIRE_EQUAL(0, sum_of_multiples::to({3, 5}, 0));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(sum_to_4_yields_3)
 {
     BOOST_REQUIRE_EQUAL(3, sum_of_multiples::to({3, 5}, 4));
 }
-
 BOOST_AUTO_TEST_CASE(sum_to_10_yields_23)
 {
     BOOST_REQUIRE_EQUAL(23, sum_of_multiples::to({3, 5}, 10));
 }
-
 BOOST_AUTO_TEST_CASE(sum_to_100)
 {
     BOOST_REQUIRE_EQUAL(2318, sum_of_multiples::to({3, 5}, 100));
 }
 
+
 BOOST_AUTO_TEST_CASE(sum_to_1000)
 {
     BOOST_REQUIRE_EQUAL(233168, sum_of_multiples::to({3, 5}, 1000));
 }
+
 
 BOOST_AUTO_TEST_CASE(sum_of_7_13_17_to_20_yields_51)
 {
@@ -62,4 +61,5 @@ BOOST_AUTO_TEST_CASE(sum_of_empty_list)
 {
     BOOST_REQUIRE_EQUAL(0, sum_of_multiples::to({}, 10000));
 }
+#if defined(EXERCISM_RUN_ALL_TESTS)
 #endif
