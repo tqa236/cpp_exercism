@@ -4,7 +4,6 @@ for path in */; do
     [ -d "${path}" ] || continue # if not a directory, skip
     dirname="$(basename "${path}")"
     cd $dirname
-    echo $path
     if ! [ -d "./build" ]; then
       file_name=${path::-1}
       file_name=${file_name//-/_}
