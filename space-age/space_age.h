@@ -12,7 +12,6 @@ namespace space_age {
         age = p_age;
       };
       long seconds() const;
-      double on_planet(string const &) const;
       constexpr double on_earth() const noexcept{
         return age/ 31557600.0;
       }
