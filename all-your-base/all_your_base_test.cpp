@@ -12,7 +12,6 @@ BOOST_AUTO_TEST_CASE(test1) {
                                     out_digits.begin(), out_digits.end());
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(single_bit_one_to_decimal) {
     vector<unsigned int> in_digits{1};
     vector<unsigned int> expected{1};
@@ -39,7 +38,6 @@ BOOST_AUTO_TEST_CASE(single_decimal_to_binary) {
     BOOST_REQUIRE_EQUAL_COLLECTIONS(expected.begin(), expected.end(),
                                     out_digits.begin(), out_digits.end());
 }
-
 BOOST_AUTO_TEST_CASE(binary_to_multiple_decimal) {
     vector<unsigned int> in_digits{1, 0, 1, 0, 1, 0};
     vector<unsigned int> expected{4, 2};
@@ -48,7 +46,6 @@ BOOST_AUTO_TEST_CASE(binary_to_multiple_decimal) {
     BOOST_REQUIRE_EQUAL_COLLECTIONS(expected.begin(), expected.end(),
                                     out_digits.begin(), out_digits.end());
 }
-
 BOOST_AUTO_TEST_CASE(decimal_to_binary) {
     vector<unsigned int> in_digits{4, 2};
     vector<unsigned int> expected{1, 0, 1, 0, 1, 0};
@@ -111,7 +108,6 @@ BOOST_AUTO_TEST_CASE(multiple_zeros) {
     BOOST_REQUIRE_EQUAL_COLLECTIONS(expected.begin(), expected.end(),
                                     out_digits.begin(), out_digits.end());
 }
-
 BOOST_AUTO_TEST_CASE(leading_zeros) {
     vector<unsigned int> in_digits{0, 6, 0};
     vector<unsigned int> expected{};
@@ -147,7 +143,6 @@ BOOST_AUTO_TEST_CASE(invalid_positive_digit) {
     BOOST_REQUIRE_EQUAL_COLLECTIONS(expected.begin(), expected.end(),
                                     out_digits.begin(), out_digits.end());
 }
-
 BOOST_AUTO_TEST_CASE(second_base_is_one) {
     vector<unsigned int> in_digits{1, 0, 1, 0, 1, 0};
     vector<unsigned int> expected{};
@@ -156,7 +151,6 @@ BOOST_AUTO_TEST_CASE(second_base_is_one) {
     BOOST_REQUIRE_EQUAL_COLLECTIONS(expected.begin(), expected.end(),
                                     out_digits.begin(), out_digits.end());
 }
-
 BOOST_AUTO_TEST_CASE(second_base_is_zero) {
     vector<unsigned int> in_digits{7};
     vector<unsigned int> expected{};
@@ -165,5 +159,5 @@ BOOST_AUTO_TEST_CASE(second_base_is_zero) {
     BOOST_REQUIRE_EQUAL_COLLECTIONS(expected.begin(), expected.end(),
                                     out_digits.begin(), out_digits.end());
 }
-
+#if defined(EXERCISM_RUN_ALL_TESTS)
 #endif
