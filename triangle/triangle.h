@@ -1,8 +1,10 @@
-#pragma once
+#if !defined(TRIANGLE_H)
+#define TRIANGLE_H
 
 namespace triangle {
   enum flavor {equilateral, isosceles, scalene};
-  void check_valid_triangle(double, double, double);
   flavor kind(double, double, double);
 
 }
+
+#endif
