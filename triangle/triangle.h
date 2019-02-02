@@ -3,7 +3,7 @@
 
 namespace triangle {
   enum flavor {equilateral, isosceles, scalene};
-  flavor kind(double, double, double);
+  flavor kind(double const, double const, double const);
 
 }
 
