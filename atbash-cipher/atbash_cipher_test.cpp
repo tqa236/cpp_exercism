@@ -7,7 +7,6 @@ BOOST_AUTO_TEST_CASE(encode_yes)
     BOOST_REQUIRE_EQUAL("bvh", atbash::encode("yes"));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(encode_no)
 {
     BOOST_REQUIRE_EQUAL("ml", atbash::encode("no"));
@@ -65,4 +64,5 @@ BOOST_AUTO_TEST_CASE(decode_all_the_letters)
     BOOST_REQUIRE_EQUAL("thequickbrownfoxjumpsoverthelazydog",
                         atbash::decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"));
 }
+#if defined(EXERCISM_RUN_ALL_TESTS)
 #endif
