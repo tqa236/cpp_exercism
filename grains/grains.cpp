@@ -1,10 +1,12 @@
 #include "grains.h"
 #include <cmath>
 
-unsigned long long int grains::square(const int number){
-    return (unsigned long long int)pow(2, (number - 1));
+using namespace std;
+
+uint64_t grains::square(const int number){
+    return (uint64_t)1 << (number-1);
 }
 
-unsigned long long int grains::total(){
-    return (unsigned long long int)pow(2, 64) - 1;
+uint64_t grains::total(){
+    return (uint64_t)pow(2, 64) - 1;
 }

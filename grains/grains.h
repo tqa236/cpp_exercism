@@ -1,10 +1,11 @@
 #if !defined(GRAINS_H)
 #define GRAINS_H
+#include <cstdint>
 
 namespace grains {
     using namespace std;
-    unsigned long long int square(const int);
-    unsigned long long int total();
+    uint64_t square(const int);
+    uint64_t total();
 }
 
 #endif
