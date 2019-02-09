@@ -12,7 +12,7 @@ BOOST_AUTO_TEST_CASE(fly)
     BOOST_REQUIRE_EQUAL(expected, food_chain::verse(1));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 BOOST_AUTO_TEST_CASE(spider)
 {
     string expected = "I know an old lady who swallowed a spider.\n"
@@ -22,7 +22,7 @@ BOOST_AUTO_TEST_CASE(spider)
 
     BOOST_REQUIRE_EQUAL(expected, food_chain::verse(2));
 }
-
+#if defined(EXERCISM_RUN_ALL_TESTS)
 BOOST_AUTO_TEST_CASE(bird)
 {
     string expected = "I know an old lady who swallowed a bird.\n"
@@ -102,7 +102,7 @@ BOOST_AUTO_TEST_CASE(horse)
 
 BOOST_AUTO_TEST_CASE(multiple_verses)
 {
-    string expected = 
+    string expected =
         "I know an old lady who swallowed a fly.\n"
         "I don't know why she swallowed the fly. Perhaps she'll die.\n"
         "\n"
