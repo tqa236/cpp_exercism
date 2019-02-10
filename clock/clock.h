@@ -3,14 +3,13 @@
 
 namespace date_independent {
     using namespace std;
+
     class clock{
     private:
-        int hour, minute;
+        int hour;
+        int minute;
     public:
-        clock(int hour_, int minute_){
-            hour = hour_;
-            minute = minute_;
-        };
-        string at(int, int);
-    };
+        static clock at(int, int);
+        operator std::string() const;
+    }
 }
