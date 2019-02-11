@@ -3,18 +3,18 @@
 for path in */; do
     [ -d "${path}" ] || continue # if not a directory, skip
     dirname="$(basename "${path}")"
-    cd $dirname
+    cd "$dirname" || return
     if ! [ -d "./build" ]; then
       file_name=${path::-1}
       file_name=${file_name//-/_}
-      echo $file_name
-      touch $file_name.h $file_name.cpp
-      echo $file_name
+      echo "$file_name"
+      touch "$file_name.h" "$file_name.cpp"
+      echo "$file_name"
       mkdir build
-      cd build
+      cd build || return
       cmake -G "Unix Makefiles" ..
-      cd ../..
-    else
-      cd ..
+      # cd ../..
+    # else
+      # cd ..
     fi
 done
