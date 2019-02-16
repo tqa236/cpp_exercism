@@ -18,7 +18,7 @@ addons:
 install:
 - "[ $CXX = g++ ] && export CXX=g++-6 || true"
 - "[ $CXX = clang++ ] && export CXX=clang++-3.8 || true"
-- pip install cpplint
+- pip3 install cpplint
 script:
 - find . -type f \( -iname \*.cpp -o -iname \*.h \) | grep -v "test" | xargs cpplint
   # - make
