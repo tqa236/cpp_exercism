@@ -20,6 +20,6 @@ install:
 - "[ $CXX = clang++ ] && export CXX=clang++-3.8 || true"
 # - pip3 install cpplint
 script:
-  - lint.sh
+  - ./lint.sh
   # - make
   # - make test

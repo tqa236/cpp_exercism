@@ -1,6 +1,6 @@
 #include <iostream>
-#include "clock.h"
 #include <sstream>
+#include "clock.h"
 
 using namespace std;
 
@@ -32,6 +32,6 @@ date_independent::clock::operator std::string() const {
   int hours = (min_ / 60) % 24;
   int minutes = min_ % 60;
   char res [5];
-  sprintf(res, "%02d:%02d", hours, minutes);
+  snprintf(res, "%02d:%02d", hours, minutes);
   return res;
 }

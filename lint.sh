@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-find ./ -type f \( -iname \*.cpp -o -iname \*.h \) | grep -v "[test|build]" | xargs cpplint --filter=-legal/copyright
+find . -iname "*.cpp" | grep -v "test" | grep -v "Compiler" |  xargs cpplint --filter=-legal/copyright,-build/include_subdir
