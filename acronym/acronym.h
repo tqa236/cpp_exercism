@@ -4,5 +4,5 @@
 using std::string;
 
 namespace acronym {
-  string acronym(string);
+string acronym(string);
 }

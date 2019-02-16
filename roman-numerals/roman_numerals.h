@@ -2,6 +2,6 @@
 #include <string>
 
 namespace roman {
-    using namespace std;
-    string convert(int);
-}
+using namespace std;
+string convert(int);
+}  // namespace roman

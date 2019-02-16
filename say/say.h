@@ -4,10 +4,9 @@
 #include <cstdint>
 #include <string>
 
-
 namespace say {
-    using namespace std;
-    string in_english(uint64_t);
-}
+using namespace std;
+string in_english(uint64_t);
+}  // namespace say
 
 #endif

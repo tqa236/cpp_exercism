@@ -4,10 +4,10 @@
 #include <string>
 
 namespace beer {
-    using namespace std;
-    string verse(int);
-    string sing(int, int);
-    string sing(int);
-}
+using namespace std;
+string verse(int);
+string sing(int, int);
+string sing(int);
+}  // namespace beer
 
 #endif

@@ -3,8 +3,8 @@
 #include <string>
 
 namespace bob {
-    using namespace std;
-    string hey(string);
-}
+using namespace std;
+string hey(string);
+}  // namespace bob
 
 #endif
