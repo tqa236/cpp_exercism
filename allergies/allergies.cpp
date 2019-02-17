@@ -4,7 +4,11 @@
 #include <bitset>
 #include <iostream>
 #include <map>
-using namespace std;
+
+using std::bitset;
+using std::map;
+using std::string;
+using std::unordered_set;
 
 namespace allergies {
 map<int, string> allergen_value = {

@@ -1,12 +1,9 @@
-#if !defined(GRAINS_H)
-#define GRAINS_H
+#pragma once
 
-#include <cstdint>
 #include <string>
 
 namespace say {
-using namespace std;
+using std::string;
 string in_english(uint64_t);
-}  // namespace say
 
-#endif
+}  // namespace say

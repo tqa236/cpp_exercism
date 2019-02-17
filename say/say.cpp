@@ -2,7 +2,8 @@
 #include <cmath>
 #include <map>
 
-using namespace std;
+using std::map;
+using std::string;
 
 string say::in_english(uint64_t number) {
   map<uint64_t, string> words = {{0, "zero"},          {1, "one"},

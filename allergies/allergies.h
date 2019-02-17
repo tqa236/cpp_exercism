@@ -3,14 +3,16 @@
 #include <unordered_set>
 
 namespace allergies {
-using namespace std;
+using std::string;
+using std::unordered_set;
+
 class allergy_test {
  private:
   int score;
   unordered_set<string> allergies;
 
  public:
-  allergy_test(int p_score) {
+  explicit allergy_test(int p_score) {
     score = p_score;
     allergies = get_allergies();
   }
