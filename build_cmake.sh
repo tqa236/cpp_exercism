@@ -13,8 +13,8 @@ for path in */; do
       mkdir build
       cd build || return
       cmake -G "Unix Makefiles" ..
-      # cd ../..
-    # else
-      # cd ..
+      cd ../.. || return
+    else
+      cd ..
     fi
 done

@@ -2,6 +2,6 @@
 #include <string>
 
 namespace food_chain {
-using namespace std;
+using std::string;
 string verse(int);
-} // namespace food_chain
+}  // namespace food_chain

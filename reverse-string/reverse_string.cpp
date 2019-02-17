@@ -1,6 +1,6 @@
 #include "reverse_string.h"
 
-using namespace std;
+using std::string;
 
 string reverse_string::reverse_string(string s) {
   string reverse_s = "";

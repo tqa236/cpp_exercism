@@ -1,8 +1,5 @@
 #include "difference_of_squares.h"
 #include <cmath>
-#include <iostream>
-
-using namespace std;
 
 int squares::square_of_sum(int num) { return pow((num * (num + 1)) / 2, 2); }
 int squares::sum_of_squares(int num) {

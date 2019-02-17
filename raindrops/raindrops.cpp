@@ -1,18 +1,20 @@
 #include "raindrops.h"
+#include <map>
 
-using namespace std;
+using std::map;
+using std::string;
+using std::to_string;
 
 string raindrops::convert(int number) {
+  map<int, string> drops = {{3, "Pling"}, {5, "Plang"}, {7, "Plong"}};
   string raindrop = "";
-  if (number % 3 == 0) {
-    raindrop = raindrop + "Pling";
+
+  for (auto const& drop : drops) {
+    if (number % drop.first == 0) {
+      raindrop = raindrop + drop.second;
+    }
   }
-  if (number % 5 == 0) {
-    raindrop = raindrop + "Plang";
-  }
-  if (number % 7 == 0) {
-    raindrop = raindrop + "Plong";
-  }
+
   if (raindrop == "") {
     return to_string(number);
   }

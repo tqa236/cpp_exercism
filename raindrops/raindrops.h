@@ -1,11 +1,12 @@
-#if !defined(RAINDROPS_H)
-#define RAINDROPS_H
+#ifndef RAINDROPS_RAINDROPS_H_
+#define RAINDROPS_RAINDROPS_H_
 
 #include <string>
 
 namespace raindrops {
-using namespace std;
+using std::string;
+
 string convert(int);
 }  // namespace raindrops
 
-#endif
+#endif  // RAINDROPS_RAINDROPS_H_

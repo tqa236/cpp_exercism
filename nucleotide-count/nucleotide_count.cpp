@@ -1,8 +1,8 @@
 #include "nucleotide_count.h"
-#include <iostream>
-#include <map>
 
-using namespace std;
+using std::invalid_argument;
+using std::map;
+using std::string;
 
 namespace dna {
 map<char, int> counter::nucleotide_counts() const {

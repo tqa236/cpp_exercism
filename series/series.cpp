@@ -1,7 +1,9 @@
 #include "series.h"
 #include <iostream>
 
-using namespace std;
+using std::domain_error;
+using std::string;
+using std::vector;
 
 vector<int> series::digits(string number) {
   vector<int> digits;

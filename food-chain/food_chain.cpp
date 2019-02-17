@@ -1,6 +1,6 @@
 #include "food_chain.h"
 
-using namespace std;
+using std::string;
 
 string food_chain::verse(int verse) {
   if (verse == 1) {

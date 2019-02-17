@@ -1,20 +1,25 @@
 #pragma once
 #include <string>
 
-using namespace std;
+using std::string;
 
 class phone_number {
  private:
   string only_number = "";
 
  public:
-  phone_number(string number_) {
-    only_number = number_;
-    // for (char& c : number_){
-    //     if (( c >= '0') && (c <= '9')){
-    //         number = number + c;
-    //     }
-    // }
+  explicit phone_number(string number) {
+    for (char& c : number) {
+      if ((c >= '0') && (c <= '9')) {
+        only_number = only_number + c;
+      }
+    }
+    only_number = valid_phone_number();
   }
-  string number() const { return const only_number; }
+  string valid_phone_number();
+  string number() const { return only_number; }
+  string area_code() const {
+    return only_number.substr(only_number.length() - 10, 3);
+  }
+  operator string() const;
 };

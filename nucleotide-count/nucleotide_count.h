@@ -1,7 +1,9 @@
+#pragma once
 #include <map>
 #include <string>
 
-using namespace std;
+using std::map;
+using std::string;
 
 namespace dna {
 class counter {
@@ -9,12 +11,12 @@ class counter {
   string dna_string;
 
  public:
-  counter(const string &a_dna) {
+  explicit counter(const string &a_dna) {
     if (a_dna.find_first_not_of("ACTG") != string::npos) {
       throw std::invalid_argument("It must only contain letters 'ACTG'");
     }
     dna_string = a_dna;
-  };
+  }
   map<char, int> nucleotide_counts() const;
   int count(char) const;
 };

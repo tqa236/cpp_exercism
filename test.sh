@@ -5,5 +5,5 @@ for path in */; do
     dirname="$(basename "${path}")"
     cd "$dirname/build" || return
     make
-    cd ../..
+    cd ../.. || return
 done

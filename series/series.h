@@ -1,13 +1,12 @@
-#if !defined(SERIES_H)
-#define SERIES_H
+#pragma once
 
 #include <string>
 #include <vector>
 
 namespace series {
-using namespace std;
+using std::string;
+using std::vector;
+
 vector<int> digits(string);
 vector<vector<int>> slice(string, int);
 }  // namespace series
-
-#endif
