@@ -2,8 +2,6 @@
 #include <iostream>
 #include <sstream>
 
-using namespace std;
-
 date_independent::clock::at(int hour, int minute) {
   stringstream ret;
   while (minute < 0) {

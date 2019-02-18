@@ -2,7 +2,6 @@
 #include <math.h>
 #include <algorithm>
 #include <bitset>
-#include <iostream>
 #include <map>
 
 using std::bitset;
