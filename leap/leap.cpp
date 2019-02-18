@@ -1,3 +1,5 @@
+#include "leap.h"
+
 namespace leap {
 bool is_leap_year(int year) {
   if (year % 4 == 0) {

@@ -1,7 +1,10 @@
 #include "roman_numerals.h"
 #include <map>
 #include <vector>
-using namespace std;
+
+using std::map;
+using std::string;
+using std::vector;
 
 string roman::convert(int number) {
   map<int, string> value = {{1, "I"},   {5, "V"},   {10, "X"},  {50, "L"},

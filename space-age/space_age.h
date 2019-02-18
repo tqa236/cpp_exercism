@@ -2,15 +2,14 @@
 #include <string>
 
 namespace space_age {
-using namespace std;
 class space_age {
  private:
-  long age;
+  int64_t age;
 
  public:
   space_age() = default;
-  explicit space_age(long p_age) { age = p_age; }
-  long seconds() const;
+  explicit space_age(int64_t p_age) { age = p_age; }
+  int64_t seconds() const;
   constexpr double on_earth() const noexcept { return age / 31557600.0; }
   constexpr double on_mercury() const noexcept {
     return age / (31557600.0 * 0.2408467);

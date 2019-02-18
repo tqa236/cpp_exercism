@@ -1,7 +1,5 @@
 #include "queen_attack.h"
 
-using namespace std;
-
 namespace queen_attack {
 pair<int, int> chess_board::white() const { return white_position; }
 pair<int, int> chess_board::black() const { return black_position; }

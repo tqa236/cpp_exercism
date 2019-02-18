@@ -1,12 +1,8 @@
-#if !defined(HELLO_WORLD_H)
-#define HELLO_WORLD_H
-
+#pragma once
 #include <string>
 
 namespace hello_world {
+using std::string;
+string hello();
 
-std::string hello();
-
-}
-
-#endif
+}  // namespace hello_world

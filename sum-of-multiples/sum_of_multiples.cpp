@@ -1,8 +1,6 @@
 #include "sum_of_multiples.h"
-#include <iostream>
-#include <random>
-#include <vector>
-using namespace std;
+
+using std::vector;
 
 int sum_of_multiples::to(vector<int> factors, int limit) {
   vector<int> numbers;

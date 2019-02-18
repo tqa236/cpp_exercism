@@ -1,11 +1,14 @@
+#pragma once
 #include <algorithm>
 #include <map>
 #include <string>
 #include <vector>
 
-using namespace std;
-
 namespace grade_school {
+using std::map;
+using std::string;
+using std::vector;
+
 struct school {
  private:
   map<int, vector<string>> class_roster;

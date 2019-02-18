@@ -1,11 +1,8 @@
-#if !defined(ATBASH_CIPHER_H)
-#define ATBASH_CIPHER_H
+#pragma once
 #include <string>
 
 namespace atbash {
-using namespace std;
+using std::string;
 string encode(string);
 string decode(string);
 }  // namespace atbash
-
-#endif

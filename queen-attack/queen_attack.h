@@ -1,10 +1,15 @@
 #pragma once
 #include <stdlib.h>
 #include <stdexcept>
+#include <string>
 #include <utility>
 
 namespace queen_attack {
-using namespace std;
+using std::domain_error;
+using std::make_pair;
+using std::pair;
+using std::string;
+
 class chess_board {
  private:
   pair<int, int> white_position;
@@ -15,7 +20,7 @@ class chess_board {
   chess_board() {
     white_position = make_pair(0, 3);
     black_position = make_pair(7, 3);
-  };
+  }
   chess_board(pair<int, int> white, pair<int, int> black) {
     white_position = white;
     black_position = black;

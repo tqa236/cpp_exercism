@@ -1,9 +1,7 @@
 #include "grade_school.h"
-#include <iostream>
-#include <map>
-#include <vector>
+#include <utility>
 
-using namespace std;
+using std::pair;
 
 namespace grade_school {
 map<int, vector<string>> school::roster() { return class_roster; }

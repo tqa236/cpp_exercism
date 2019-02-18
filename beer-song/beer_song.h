@@ -1,13 +1,11 @@
-#if !defined(BEER_SONG_H)
-#define BEER_SONG_H
+#pragma once
 
 #include <string>
 
 namespace beer {
-using namespace std;
+using std::string;
+
 string verse(int);
 string sing(int, int);
 string sing(int);
 }  // namespace beer
-
-#endif

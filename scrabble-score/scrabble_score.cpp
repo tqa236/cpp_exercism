@@ -3,7 +3,9 @@
 #include <map>
 #include <string>
 
-using namespace std;
+using std::map;
+using std::string;
+
 namespace scrabble_score {
 map<char, int> letter_value = {
     {'A', 1}, {'E', 1}, {'I', 1}, {'O', 1},  {'U', 1}, {'L', 1}, {'N', 1},

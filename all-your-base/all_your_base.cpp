@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
+using std::vector;
 
 namespace all_your_base {
 vector<unsigned int> convert(int in_base, vector<unsigned int> in_digits,

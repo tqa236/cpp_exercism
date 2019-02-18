@@ -2,7 +2,7 @@
 #include <math.h>
 #include <iostream>
 
-using namespace std;
+using std::vector;
 
 vector<int> prime_factors::primes(int number) {
   vector<int> primes;
@@ -23,7 +23,8 @@ vector<int> prime_factors::primes(int number) {
 
 vector<int> prime_factors::of(int number) {
   vector<int> factors;
-  vector<int> primes = prime_factors::primes((int)sqrt(number) + 1);
+  vector<int> primes =
+      prime_factors::primes(static_cast<int>(sqrt(number)) + 1);
   for (auto const& prime : primes) {
     while (number % prime == 0) {
       factors.push_back(prime);

@@ -2,7 +2,9 @@
 #include <algorithm>
 #include <stdexcept>
 
-using namespace std;
+using std::domain_error;
+using std::max;
+using std::min;
 
 namespace triangle {
 static void check_valid_triangle(double const side1, double const side2,

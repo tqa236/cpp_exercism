@@ -1,7 +1,4 @@
-#include <string>
-#include <vector>
-
-using namespace std;
+#pragma once
 
 namespace prime {
 int nth(int);

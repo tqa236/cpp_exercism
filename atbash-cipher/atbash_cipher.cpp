@@ -1,7 +1,7 @@
 #include "atbash_cipher.h"
 #include <algorithm>
 
-using namespace std;
+using std::string;
 
 string atbash::encode(string text) {
   string cipher;
@@ -15,7 +15,7 @@ string atbash::encode(string text) {
     if (isdigit(c)) {
       cipher = cipher + c;
     } else {
-      cipher = cipher + (char)('a' + 'z' - tolower(c));
+      cipher = cipher + static_cast<char>('a' + 'z' - tolower(c));
     }
     count = count + 1;
   }

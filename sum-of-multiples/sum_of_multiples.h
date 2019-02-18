@@ -2,6 +2,6 @@
 #include <vector>
 
 namespace sum_of_multiples {
-using namespace std;
+using std::vector;
 int to(vector<int>, int);
 }  // namespace sum_of_multiples

@@ -2,6 +2,6 @@
 #include <string>
 
 namespace trinary {
-using namespace std;
+using std::string;
 int to_decimal(string);
 }  // namespace trinary

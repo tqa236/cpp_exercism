@@ -1,5 +1,7 @@
-#include <iostream>
-using namespace std;
+#include "hamming.h"
+#include <stdexcept>
+
+using std::domain_error;
 
 namespace hamming {
 int compute(string dna1, string dna2) {

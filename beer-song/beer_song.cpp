@@ -2,7 +2,8 @@
 #include <algorithm>
 #include <stdexcept>
 
-using namespace std;
+using std::string;
+using std::to_string;
 
 string beer::verse(int verse_num) {
   if (verse_num == 0) {
@@ -33,7 +34,6 @@ string beer::sing(int start, int end) {
     lyrics = lyrics + "\n" + beer::verse(i);
   }
   return lyrics.erase(0, 1);
-  ;
 }
 
 string beer::sing(int start) { return beer::sing(start, 0); }

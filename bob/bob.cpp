@@ -1,7 +1,7 @@
 #include "bob.h"
 #include <locale>
 
-using namespace std;
+using std::string;
 
 string bob::hey(string text) {
   bool no_lowercase = true;

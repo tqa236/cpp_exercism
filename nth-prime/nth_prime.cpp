@@ -1,10 +1,11 @@
 #include "nth_prime.h"
 #include <math.h>
-#include <iostream>
-#include <string>
+#include <stdexcept>
 #include <vector>
 
-using namespace std;
+using std::domain_error;
+using std::vector;
+
 int prime::nth(int number) {
   int count = 0;
   int upper_bound;
@@ -13,7 +14,8 @@ int prime::nth(int number) {
   } else if (number == 1) {
     upper_bound = 2;
   } else {
-    upper_bound = 10 + (int)(number * (log(number) + log(log(number))));
+    upper_bound =
+        10 + static_cast<int>(number * (log(number) + log(log(number))));
   }
 
   vector<int> numbers;
