@@ -1,17 +1,20 @@
 #include "pangram.h"
 #include <algorithm>
-#include <set>
+#include <bitset>
+#include <stdexcept>
 #include <string>
 
-using std::set;
+using std::bitset;
+using std::out_of_range;
 using std::string;
 
-bool pangram::is_pangram(string sentence) {
-  set<char> letters;
-  for (char c : sentence) {
-    char lower_char = tolower(c);
-    if ((lower_char >= 'a') && (lower_char <= 'z')) letters.insert(lower_char);
+bool pangram::is_pangram(const string& sentence) {
+  bitset<26> letters;
+  for (auto c : sentence) {
+    try {
+      letters.set(tolower(c) - 'a');
+    } catch (out_of_range) {
+    }
   }
-  if (letters.size() == 26) return true;
-  return false;
+  return letters.all();
 }
