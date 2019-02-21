@@ -3,7 +3,7 @@
 for path in */; do
     [ -d "${path}" ] || continue # if not a directory, skip
     dirname="$(basename "${path}")"
-    cd "$dirname/build" || return
+    cd "$dirname/build" || exit
     make
-    cd ../.. || return
+    cd ../.. || exit
 done
