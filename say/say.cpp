@@ -1,11 +1,20 @@
 #include "say.h"
 #include <cmath>
 #include <map>
+#include <stdexcept>
 
+using std::domain_error;
 using std::map;
 using std::string;
 
-string say::in_english(uint64_t number) {
+string say::in_english(int64_t number) {
+  if ((number < 0) ||
+      (number >= static_cast<int64_t>(1000ULL * 1000ULL * 1000ULL * 1000ULL))) {
+    throw domain_error("Not in range.");
+  }
+  if (number == 0) {
+    return "zero";
+  }
   map<uint64_t, string> words = {{0, "zero"},          {1, "one"},
                                  {2, "two"},           {3, "three"},
                                  {4, "four"},          {5, "five"},
@@ -23,25 +32,22 @@ string say::in_english(uint64_t number) {
                                  {100, "hundred"},     {1000, "thousand"},
                                  {1000000, "million"}, {1000000000, "billion"}};
   string spelling = "";
-  if (number == 0) {
-    return "zero";
-  }
   if (number >= 1000000000) {
-    spelling = spelling + words[number / 1000000000] + " billion";
+    spelling = spelling + in_english(number / 1000000000) + " billion";
     number = number % 1000000000;
     if (number > 0) {
       spelling = spelling + " ";
     }
   }
   if (number >= 1000000) {
-    spelling = spelling + words[number / 1000000] + " million";
+    spelling = spelling + in_english(number / 1000000) + " million";
     number = number % 1000000;
     if (number > 0) {
       spelling = spelling + " ";
     }
   }
   if (number >= 1000) {
-    spelling = spelling + words[number / 1000] + " thousand";
+    spelling = spelling + in_english(number / 1000) + " thousand";
     number = number % 1000;
     if (number > 0) {
       spelling = spelling + " ";

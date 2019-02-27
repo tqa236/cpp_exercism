@@ -2,7 +2,10 @@
 #include <iostream>
 #include <sstream>
 
-date_independent::clock::at(int hour, int minute) {
+using std::stringstream;
+
+namespace date_independent {
+clock clock::at(int hour, int minute) {
   stringstream ret;
   while (minute < 0) {
     minute = minute + 60;
@@ -24,10 +27,11 @@ date_independent::clock::at(int hour, int minute) {
   return ret.str();
 }
 
-date_independent::clock::operator std::string() const {
+clock::operator std::string() const {
   int hours = (min_ / 60) % 24;
   int minutes = min_ % 60;
   char res[5];
   snprintf(res, "%02d:%02d", hours, minutes);
   return res;
 }
+} // namespace date_independent

@@ -4,6 +4,6 @@
 
 namespace say {
 using std::string;
-string in_english(uint64_t);
+string in_english(int64_t);
 
 }  // namespace say
