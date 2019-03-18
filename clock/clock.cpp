@@ -1,4 +1,5 @@
 #include "clock.h"
+#include <math.h>
 #include <iostream>
 #include <sstream>
 
@@ -6,32 +7,12 @@ using std::stringstream;
 
 namespace date_independent {
 clock clock::at(int hour, int minute) {
-  stringstream ret;
-  while (minute < 0) {
-    minute = minute + 60;
-    hour = hour - 1;
-  }
-  while (hour < 0) {
-    hour = hour + 24;
-  }
-  hour = (hour + minute / 60) % 24;
-  minute = minute % 60;
-  if (hour < 10) {
-    ret << "0";
-  }
-  ret << hour << ":";
-  if (minute < 10) {
-    ret << "0";
-  }
-  ret << minute;
-  return ret.str();
+  auto exact_hour =
+      ((hour + static_cast<int>(floor(minute / 60.0))) % 24 + 24) % 24;
+  auto exact_minute = (minute % 60 + 60) % 60;
+  return clock(exact_hour, exact_minute);
 }
 
-clock::operator std::string() const {
-  int hours = (min_ / 60) % 24;
-  int minutes = min_ % 60;
-  char res[5];
-  snprintf(res, "%02d:%02d", hours, minutes);
-  return res;
-}
-} // namespace date_independent
+clock clock::plus(int minutes) { return clock::at(hour, minute + minutes); }
+
+}  // namespace date_independent
