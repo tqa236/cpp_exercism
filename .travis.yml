@@ -21,4 +21,4 @@ script:
   - ./build_cmake.sh
   - ./test.sh
 after_success:
-  - coveralls --exclude-pattern '*/build/*'
+  - coveralls --exclude build
