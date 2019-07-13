@@ -2,6 +2,7 @@
 #include <boost/date_time/gregorian/gregorian.hpp>
 
 namespace meetup {
+// typedef scheduler boost::gregorian::date;
 class meetup {
  private:
   boost::gregorian::date meeting_date;
