@@ -15,6 +15,6 @@ install:
 - "[ $CXX = g++ ] && export CXX=g++-6 || true"
 - "[ $CXX = clang++ ] && export CXX=clang++-3.8 || true"
 script:
-  - ./install.sh
+  # - ./install.sh
   # - ./build_cmake.sh
   # - ./test.sh
