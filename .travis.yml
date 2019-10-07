@@ -17,4 +17,4 @@ install:
 script:
   - ./install.sh
   - ./build_cmake.sh
-  - ./test.sh
+  # - ./test.sh
