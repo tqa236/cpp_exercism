@@ -11,22 +11,10 @@ addons:
     packages:
     - g++-6
     - clang-3.8
-    - lcov
-before_install:
-  - pip install --user cpp-coveralls
 install:
 - "[ $CXX = g++ ] && export CXX=g++-6 || true"
 - "[ $CXX = clang++ ] && export CXX=clang++-3.8 || true"
 script:
   - ./install.sh
   - ./build_cmake.sh
-  - ./configure --enable-gcov && make && make check
   - ./test.sh
-after_success:
-# Create lcov report
-- lcov --capture --directory . --output-file coverage.info
-- lcov --remove coverage.info '/usr/*' --output-file coverage.info # filter system-files
-- lcov --list coverage.info # debug info
-# Uploading report to CodeCov
-- bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
-- coveralls --exclude lib --exclude tests --gcov-options '\-lp'

@@ -1,3 +1,4 @@
+cpp_exercism	/home/tqa/exercism/cpp/README.md	/^# cpp_exercism$/;"	function	line:1
 sudo	/home/tqa/exercism/cpp/.travis.yml	/^sudo: false$/;"	function	line:1
 language	/home/tqa/exercism/cpp/.travis.yml	/^language: cpp$/;"	function	line:2
 compiler	/home/tqa/exercism/cpp/.travis.yml	/^compiler:$/;"	function	line:3
@@ -5,7 +6,5 @@ addons	/home/tqa/exercism/cpp/.travis.yml	/^addons:$/;"	function	line:6
 apt	/home/tqa/exercism/cpp/.travis.yml	/^  apt:$/;"	function	line:7
 sources	/home/tqa/exercism/cpp/.travis.yml	/^    sources:$/;"	function	line:8
 packages	/home/tqa/exercism/cpp/.travis.yml	/^    packages:$/;"	function	line:11
-before_install	/home/tqa/exercism/cpp/.travis.yml	/^before_install:$/;"	function	line:15
-install	/home/tqa/exercism/cpp/.travis.yml	/^install:$/;"	function	line:17
-script	/home/tqa/exercism/cpp/.travis.yml	/^script:$/;"	function	line:20
-after_success	/home/tqa/exercism/cpp/.travis.yml	/^after_success:$/;"	function	line:25
+install	/home/tqa/exercism/cpp/.travis.yml	/^install:$/;"	function	line:14
+script	/home/tqa/exercism/cpp/.travis.yml	/^script:$/;"	function	line:17

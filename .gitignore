@@ -44,3 +44,5 @@ compile_commands.json
 CTestTestfile.cmake
 */build/*
 **/.exercism/*
+.tags
+.tags1

@@ -11,7 +11,5 @@ addons	/home/tqa/exercism/cpp/.travis.yml	/^addons:$/;"	function	line:6
 apt	/home/tqa/exercism/cpp/.travis.yml	/^  apt:$/;"	function	line:7
 sources	/home/tqa/exercism/cpp/.travis.yml	/^    sources:$/;"	function	line:8
 packages	/home/tqa/exercism/cpp/.travis.yml	/^    packages:$/;"	function	line:11
-before_install	/home/tqa/exercism/cpp/.travis.yml	/^before_install:$/;"	function	line:15
-install	/home/tqa/exercism/cpp/.travis.yml	/^install:$/;"	function	line:17
-script	/home/tqa/exercism/cpp/.travis.yml	/^script:$/;"	function	line:20
-after_success	/home/tqa/exercism/cpp/.travis.yml	/^after_success:$/;"	function	line:25
+install	/home/tqa/exercism/cpp/.travis.yml	/^install:$/;"	function	line:14
+script	/home/tqa/exercism/cpp/.travis.yml	/^script:$/;"	function	line:17
