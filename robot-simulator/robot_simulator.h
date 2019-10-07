@@ -5,7 +5,7 @@
 namespace robot_simulator {
 using std::pair;
 using std::string;
-enum class Bearing { NORTH = 0, EAST = 1, SOUTH = 2, WEST = 3 };
+enum Bearing { NORTH, EAST, SOUTH, WEST };
 class Robot {
  private:
   pair<int, int> robot_position;

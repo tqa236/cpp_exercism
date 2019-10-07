@@ -3,38 +3,14 @@
 namespace robot_simulator {
 
 void Robot::turn_right() {
-  {
-    switch (robot_bearing) {
-      case Bearing::NORTH:
-        robot_bearing = Bearing::EAST;
-        break;
-      case Bearing::EAST:
-        robot_bearing = Bearing::SOUTH;
-        break;
-      case Bearing::SOUTH:
-        robot_bearing = Bearing::WEST;
-        break;
-      case Bearing::WEST:
-        robot_bearing = Bearing::NORTH;
-        break;
-    }
-  }
+  robot_bearing = robot_bearing == Bearing::WEST
+                      ? Bearing::NORTH
+                      : static_cast<Bearing>(robot_bearing + 1);
 }
 void Robot::turn_left() {
-  switch (robot_bearing) {
-    case Bearing::NORTH:
-      robot_bearing = Bearing::WEST;
-      break;
-    case Bearing::WEST:
-      robot_bearing = Bearing::SOUTH;
-      break;
-    case Bearing::SOUTH:
-      robot_bearing = Bearing::EAST;
-      break;
-    case Bearing::EAST:
-      robot_bearing = Bearing::NORTH;
-      break;
-  }
+  robot_bearing = robot_bearing == Bearing::NORTH
+                      ? Bearing::WEST
+                      : static_cast<Bearing>(robot_bearing - 1);
 }
 void Robot::advance() {
   switch (robot_bearing) {
