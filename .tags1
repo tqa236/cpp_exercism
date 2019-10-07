@@ -1,0 +1,17 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+sudo	/home/tqa/exercism/cpp/.travis.yml	/^sudo: false$/;"	function	line:1
+language	/home/tqa/exercism/cpp/.travis.yml	/^language: cpp$/;"	function	line:2
+compiler	/home/tqa/exercism/cpp/.travis.yml	/^compiler:$/;"	function	line:3
+addons	/home/tqa/exercism/cpp/.travis.yml	/^addons:$/;"	function	line:6
+apt	/home/tqa/exercism/cpp/.travis.yml	/^  apt:$/;"	function	line:7
+sources	/home/tqa/exercism/cpp/.travis.yml	/^    sources:$/;"	function	line:8
+packages	/home/tqa/exercism/cpp/.travis.yml	/^    packages:$/;"	function	line:11
+before_install	/home/tqa/exercism/cpp/.travis.yml	/^before_install:$/;"	function	line:15
+install	/home/tqa/exercism/cpp/.travis.yml	/^install:$/;"	function	line:17
+script	/home/tqa/exercism/cpp/.travis.yml	/^script:$/;"	function	line:20
+after_success	/home/tqa/exercism/cpp/.travis.yml	/^after_success:$/;"	function	line:25
