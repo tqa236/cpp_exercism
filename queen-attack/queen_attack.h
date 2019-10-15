@@ -7,29 +7,20 @@
 namespace queen_attack {
 using std::domain_error;
 using std::make_pair;
-using std::pair;
 using std::string;
+using Position = std::pair<int, int>;
 
 class chess_board {
  private:
-  pair<int, int> white_position;
-  pair<int, int> black_position;
-  unsigned get_queen_position_in_string(pair<int, int> coordinates) const;
+  Position white_position{0, 3};
+  Position black_position{7, 3};
+  unsigned get_queen_position_in_string(Position coordinates) const;
 
  public:
-  chess_board() {
-    white_position = make_pair(0, 3);
-    black_position = make_pair(7, 3);
-  }
-  chess_board(pair<int, int> white, pair<int, int> black) {
-    white_position = white;
-    black_position = black;
-    if (white_position == black_position) {
-      throw domain_error("Queen positions must be distinct.");
-    }
-  }
-  pair<int, int> white() const;
-  pair<int, int> black() const;
+  chess_board();
+  chess_board(Position white, Position black);
+  Position white() const;
+  Position black() const;
   bool can_attack() const;
   operator string() const;
 };
