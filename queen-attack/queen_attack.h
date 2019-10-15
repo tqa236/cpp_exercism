@@ -22,7 +22,7 @@ class chess_board {
   Position white() const;
   Position black() const;
   bool can_attack() const;
-  operator string() const;
+  explicit operator string() const;
 };
 
 }  // namespace queen_attack

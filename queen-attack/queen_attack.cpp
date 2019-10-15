@@ -21,7 +21,7 @@ bool chess_board::can_attack() const {
 }
 
 unsigned chess_board::get_queen_position_in_string(Position coordinates) const {
-  return static_cast<unsigned>(coordinates.first * 16 + coordinates.second * 2);
+  return coordinates.first * 16 + coordinates.second * 2;
 }
 
 chess_board::operator string() const {
