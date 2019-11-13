@@ -12,6 +12,7 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-5
+            - lcov
 
     - env: COMPILER=clang++-3.8
       addons:
@@ -22,6 +23,7 @@ matrix:
           packages:
             - clang-3.8
             - g++-5
+            - lcov
 
     - env:
       - COMPILER=clang++-7
@@ -33,6 +35,7 @@ matrix:
             - llvm-toolchain-trusty-7
           packages:
             - clang-7
+            - lcov
 
     - env: COMPILER=g++-8
       addons:
@@ -41,10 +44,7 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-8
-
-addons:
-  apt:
-    packages: lcov
+            - lcov
 
 before_install:
   - sudo add-apt-repository -y ppa:samuel-bachmann/boost
