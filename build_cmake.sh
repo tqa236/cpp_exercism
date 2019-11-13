@@ -12,7 +12,7 @@ for path in */; do
       echo "$file_name"
       mkdir build
       cd build || exit
-      cmake -DENABLE_COVERAGE=ON -G "Unix Makefiles" ..
+      cmake -G "Unix Makefiles" ..
       cd ../.. || exit
     else
       cd ..
