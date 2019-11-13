@@ -1,4 +1,4 @@
-dist: trusty
+dist: bionic
 sudo: false
 language: cpp
 os: linux
@@ -51,7 +51,7 @@ before_install:
   - sudo apt-get -y -d update
 install:
   - sudo apt-get -y install cmake3 ninja-build # libboost-date-time1.60-dev
-  - sudo apt-get install libboost-all-dev
+  - sudo apt-get -y install libboost-all-dev
   - export CXX=${COMPILER}
   - ${CXX} --version
 script:
