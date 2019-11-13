@@ -48,7 +48,6 @@ script:
   - ./build_cmake.sh
   - ./test.sh
 
-
 after_success:
 - lcov --capture --directory . --output-file coverage.info
 - lcov --remove coverage.info '/usr/*' --output-file coverage.info
