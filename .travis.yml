@@ -37,11 +37,13 @@ matrix:
 
 before_install:
   - sudo apt-get -y -d update
+
 install:
   - sudo apt-get -y install cmake ninja-build
   - sudo apt-get -y install libboost-all-dev
   - export CXX=${COMPILER}
   - ${CXX} --version
+
 script:
   - ./build_cmake.sh
   - ./test.sh
