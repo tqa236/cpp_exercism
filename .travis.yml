@@ -36,10 +36,9 @@ matrix:
             - lcov
 
 before_install:
-  # - sudo add-apt-repository -y ppa:samuel-bachmann/boost
   - sudo apt-get -y -d update
 install:
-  - sudo apt-get -y install cmake ninja-build # libboost-date-time1.60-dev
+  - sudo apt-get -y install cmake ninja-build
   - sudo apt-get -y install libboost-all-dev
   - export CXX=${COMPILER}
   - ${CXX} --version
@@ -48,9 +47,7 @@ script:
   - ./test.sh
 
 after_success:
-# Create lcov report
 - lcov --capture --directory . --output-file coverage.info
-- lcov --remove coverage.info '/usr/*' --output-file coverage.info # filter system-files
-- lcov --list coverage.info # debug info
-# Uploading report to CodeCov
+- lcov --remove coverage.info '/usr/*' --output-file coverage.info
+- lcov --list coverage.info
 - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
