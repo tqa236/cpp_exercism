@@ -1,8 +1,10 @@
 #pragma once
 #include <string>
+#include <vector>
 
 namespace robot_name {
 using std::string;
+using std::vector;
 class robot {
  private:
   string name_ = "";
@@ -12,7 +14,7 @@ class robot {
 
  public:
   robot();
-  string name() const;
+  string name() const&;
   void reset();
 };
 }  // namespace robot_name
