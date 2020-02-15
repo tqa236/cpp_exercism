@@ -22,6 +22,10 @@ BOOST_AUTO_TEST_CASE(twenty_two) {
 BOOST_AUTO_TEST_CASE(sixty_nine) {
   BOOST_REQUIRE_EQUAL("sixty-nine", say::in_english(69ULL));
 }
+BOOST_AUTO_TEST_CASE(eighty) {
+  BOOST_REQUIRE_EQUAL("eighty", say::in_english(80ULL));
+}
+
 BOOST_AUTO_TEST_CASE(one_hundred) {
   BOOST_REQUIRE_EQUAL("one hundred", say::in_english(100ULL));
 }
@@ -56,11 +60,12 @@ BOOST_AUTO_TEST_CASE(one_billion) {
                       say::in_english(1000ULL * 1000ULL * 1000ULL));
 }
 BOOST_AUTO_TEST_CASE(a_really_big_number) {
-  BOOST_REQUIRE_EQUAL("nine hundred eighty-seven billion"
-                      " six hundred fifty-four million"
-                      " three hundred twenty-one thousand"
-                      " one hundred twenty-three",
-                      say::in_english(987654321123ULL));
+  BOOST_REQUIRE_EQUAL(
+      "nine hundred eighty-seven billion"
+      " six hundred fifty-four million"
+      " three hundred twenty-one thousand"
+      " one hundred twenty-three",
+      say::in_english(987654321123ULL));
 }
 
 BOOST_AUTO_TEST_CASE(raises_an_error_below_zero) {

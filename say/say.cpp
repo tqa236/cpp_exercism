@@ -2,70 +2,71 @@
 #include <cmath>
 #include <map>
 #include <stdexcept>
+#include <vector>
 
 using std::domain_error;
+using std::int64_t;
 using std::map;
 using std::string;
+using std::vector;
 
 string say::in_english(int64_t number) {
-  if ((number < 0) ||
-      (number >= static_cast<int64_t>(1000ULL * 1000ULL * 1000ULL * 1000ULL))) {
+  if ((number < 0) || (number >= static_cast<int64_t>(1000000000000))) {
     throw domain_error("Not in range.");
   }
   if (number == 0) {
     return "zero";
   }
-  map<uint64_t, string> words = {{0, "zero"},          {1, "one"},
-                                 {2, "two"},           {3, "three"},
-                                 {4, "four"},          {5, "five"},
-                                 {6, "six"},           {7, "seven"},
-                                 {8, "eight"},         {9, "nine"},
-                                 {10, "ten"},          {11, "eleven"},
-                                 {12, "twelve"},       {13, "thirteen"},
-                                 {14, "fourteen"},     {15, "fifteen"},
-                                 {16, "sixteen"},      {17, "seventeen"},
-                                 {18, "eighteen"},     {19, "nineteen"},
-                                 {20, "twenty"},       {30, "thirty"},
-                                 {40, "forty"},        {50, "fifty"},
-                                 {60, "sixty"},        {70, "seventy"},
-                                 {80, "eighty"},       {90, "ninety"},
-                                 {100, "hundred"},     {1000, "thousand"},
-                                 {1000000, "million"}, {1000000000, "billion"}};
+  const static map<int64_t, string> words = {{0, ""},
+                                             {1, "one"},
+                                             {2, "two"},
+                                             {3, "three"},
+                                             {4, "four"},
+                                             {5, "five"},
+                                             {6, "six"},
+                                             {7, "seven"},
+                                             {8, "eight"},
+                                             {9, "nine"},
+                                             {10, "ten"},
+                                             {11, "eleven"},
+                                             {12, "twelve"},
+                                             {13, "thirteen"},
+                                             {14, "fourteen"},
+                                             {15, "fifteen"},
+                                             {16, "sixteen"},
+                                             {17, "seventeen"},
+                                             {18, "eighteen"},
+                                             {19, "nineteen"},
+                                             {20, "twenty"},
+                                             {30, "thirty"},
+                                             {40, "forty"},
+                                             {50, "fifty"},
+                                             {60, "sixty"},
+                                             {70, "seventy"},
+                                             {80, "eighty"},
+                                             {90, "ninety"},
+                                             {100, "hundred"},
+                                             {1000, "thousand"},
+                                             {1000000, "million"},
+                                             {1000000000, "billion"}};
   string spelling = "";
-  if (number >= 1000000000) {
-    spelling = spelling + in_english(number / 1000000000) + " billion";
-    number = number % 1000000000;
-    if (number > 0) {
-      spelling = spelling + " ";
+  vector<int64_t> checkpoints = {1000000000, 1000000, 1000, 100};
+  for (int64_t& checkpoint : checkpoints) {
+    if (number >= checkpoint) {
+      spelling += in_english(number / checkpoint) + " " + words.at(checkpoint);
+      number %= checkpoint;
+      if (number > 0) {
+        spelling += " ";
+      }
     }
-  }
-  if (number >= 1000000) {
-    spelling = spelling + in_english(number / 1000000) + " million";
-    number = number % 1000000;
-    if (number > 0) {
-      spelling = spelling + " ";
-    }
-  }
-  if (number >= 1000) {
-    spelling = spelling + in_english(number / 1000) + " thousand";
-    number = number % 1000;
-    if (number > 0) {
-      spelling = spelling + " ";
-    }
-  }
-  if (number >= 100) {
-    spelling = spelling + words[number / 100] + " hundred";
-    number = number % 100;
-    if (number > 0) {
-      spelling = spelling + " ";
-    }
-  }
+  };
   if (number > 20) {
-    spelling = spelling + words[(number / 10) * 10] + "-";
-    number = number % 10;
+    spelling += words.at((number / 10) * 10);
+    number %= 10;
+    if (number > 0) {
+      spelling += "-";
+    }
   }
-  if (number > 0) {
-    spelling = spelling + words[number];
-  }
+  spelling += words.at(number);
   return spelling;
 }
