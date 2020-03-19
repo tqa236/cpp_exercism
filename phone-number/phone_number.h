@@ -8,7 +8,7 @@ class phone_number {
   string only_number = "";
 
  public:
-  explicit phone_number(string number) {
+  phone_number(string number) {
     for (char& c : number) {
       if ((c >= '0') && (c <= '9')) {
         only_number = only_number + c;
@@ -20,6 +20,6 @@ class phone_number {
   string number() const { return only_number; }
   string area_code() const {
     return only_number.substr(only_number.length() - 10, 3);
-  }
+  };
   operator string() const;
 };

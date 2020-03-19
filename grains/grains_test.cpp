@@ -1,46 +1,44 @@
 #include "grains.h"
-#define BOOST_TEST_MAIN
-#include <boost/test/unit_test.hpp>
+#include "test/catch.hpp"
 
-BOOST_AUTO_TEST_CASE(square_1)
+TEST_CASE("square_1")
 {
-    BOOST_REQUIRE_EQUAL(1ULL, grains::square(1));
+    REQUIRE(1ULL == grains::square(1));
 }
 
-BOOST_AUTO_TEST_CASE(square_2)
-{
-    BOOST_REQUIRE_EQUAL(2ULL, grains::square(2));
-}
-
-BOOST_AUTO_TEST_CASE(square_3)
-{
-    BOOST_REQUIRE_EQUAL(4ULL, grains::square(3));
-}
-
-BOOST_AUTO_TEST_CASE(square_4)
-{
-    BOOST_REQUIRE_EQUAL(8ULL, grains::square(4));
-}
-
-BOOST_AUTO_TEST_CASE(square_16)
-{
-    BOOST_REQUIRE_EQUAL(32768ULL, grains::square(16));
-}
-
-BOOST_AUTO_TEST_CASE(square_32)
-{
-    BOOST_REQUIRE_EQUAL(2147483648ULL, grains::square(32));
-}
-
-BOOST_AUTO_TEST_CASE(square_64)
-{
-    BOOST_REQUIRE_EQUAL(9223372036854775808ULL, grains::square(64));
-}
-
-
-BOOST_AUTO_TEST_CASE(total)
-{
-    BOOST_REQUIRE_EQUAL(18446744073709551615ULL, grains::total());
-}
 #if defined(EXERCISM_RUN_ALL_TESTS)
+TEST_CASE("square_2")
+{
+    REQUIRE(2ULL == grains::square(2));
+}
+
+TEST_CASE("square_3")
+{
+    REQUIRE(4ULL == grains::square(3));
+}
+
+TEST_CASE("square_4")
+{
+    REQUIRE(8ULL == grains::square(4));
+}
+
+TEST_CASE("square_16")
+{
+    REQUIRE(32768ULL == grains::square(16));
+}
+
+TEST_CASE("square_32")
+{
+    REQUIRE(2147483648ULL == grains::square(32));
+}
+
+TEST_CASE("square_64")
+{
+    REQUIRE(9223372036854775808ULL == grains::square(64));
+}
+
+TEST_CASE("total")
+{
+    REQUIRE(18446744073709551615ULL == grains::total());
+}
 #endif

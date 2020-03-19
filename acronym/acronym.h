@@ -1,8 +1,7 @@
-#pragma once
 #include <string>
 
-using std::string;
+using namespace std;
 
 namespace acronym {
-string acronym(string);
+  string acronym(string);
 }

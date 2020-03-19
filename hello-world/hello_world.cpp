@@ -1,6 +1,8 @@
-#include "hello_world.h"
+#include <iostream>
 
 namespace hello_world {
-string hello() { return "Hello, World!"; }
+  std::string hello(){
+    return "Hello, World!";
+  }
 
-}  // namespace hello_world
+}

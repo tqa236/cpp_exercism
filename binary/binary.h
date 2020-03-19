@@ -1,9 +1,8 @@
-#pragma once
 #include <string>
+using namespace std;
 
 namespace binary {
-using std::string;
 
 int convert(string bin);
 
-}  // namespace binary
+}

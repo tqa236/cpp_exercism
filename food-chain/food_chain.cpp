@@ -32,7 +32,7 @@ std::string food_chain::verse(int num) {
     }
   }
 
-  return res + (song_info[FLY].reaction + "\n");
+  return res += (song_info[FLY].reaction + "\n");
 }
 
 std::string food_chain::verses(int start, int end) {

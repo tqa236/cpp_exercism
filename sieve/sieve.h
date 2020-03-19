@@ -1,8 +1,8 @@
-#pragma once
+#include <string>
 #include <vector>
 
-using std::vector;
+using namespace std;
 
 namespace sieve {
-vector<int> primes(int);
+  vector<int> primes(int);
 }

@@ -1,23 +1,23 @@
-#include "acronym.h"
 #include <iostream>
 #include <string>
 
-using std::string;
+using namespace std;
 
 namespace acronym {
-string acronym(string name) {
-  string acronym_name = "";
-  bool flag = true;
-  for (char &c : name) {
-    if (isalpha(c)) {
-      if (flag) {
-        acronym_name += toupper(c);
-        flag = false;
+  string acronym(string name){
+    string acronym_name = "";
+    bool flag = true;
+    for(char& c : name) {
+      if (isalpha(c)){
+        if (flag){
+          acronym_name += toupper(c);
+          flag = false;
+        }
       }
-    } else {
-      flag = true;
+      else{
+        flag = true;
+      }
     }
+    return acronym_name;
   }
-  return acronym_name;
 }
-}  // namespace acronym
