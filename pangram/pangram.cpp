@@ -13,7 +13,7 @@ bool pangram::is_pangram(const string& sentence) {
   for (auto c : sentence) {
     try {
       letters.set(tolower(c) - 'a');
-    } catch (out_of_range) {
+    } catch (const out_of_range&) {
     }
   }
   return letters.all();
