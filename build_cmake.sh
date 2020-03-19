@@ -3,9 +3,10 @@
 for path in */; do
     [ -d "${path}" ] || continue # if not a directory, skip
     dirname="$(basename "${path}")"
-    cat code_coverage_CMake.txt >> "$dirname/CMakeLists.txt"
+
     cd "$dirname" || exit
     if ! [ -d "./build" ]; then
+      cat "../code_coverage_CMake.txt" >> "CMakeLists.txt"
       file_name=${path::-1}
       file_name=${file_name//-/_}
       echo "$file_name"
