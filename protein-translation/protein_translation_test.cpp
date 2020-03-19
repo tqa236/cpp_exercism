@@ -1,6 +1,8 @@
 #include "protein_translation.h"
+
 #include <string>
 #include <vector>
+
 #include "test/catch.hpp"
 
 using namespace std;

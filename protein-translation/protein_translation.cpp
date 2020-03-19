@@ -1,4 +1,5 @@
 #include "protein_translation.h"
+
 #include <map>
 
 namespace protein_translation {
