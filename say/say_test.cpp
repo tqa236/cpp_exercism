@@ -1,80 +1,93 @@
 #include "say.h"
-#define BOOST_TEST_MAIN
-#include <boost/test/unit_test.hpp>
+#include "test/catch.hpp"
 
-BOOST_AUTO_TEST_CASE(zero) {
-  BOOST_REQUIRE_EQUAL("zero", say::in_english(0ULL));
-}
-
-BOOST_AUTO_TEST_CASE(one) { BOOST_REQUIRE_EQUAL("one", say::in_english(1ULL)); }
-
-BOOST_AUTO_TEST_CASE(fourteen) {
-  BOOST_REQUIRE_EQUAL("fourteen", say::in_english(14ULL));
+TEST_CASE("zero")
+{
+    REQUIRE("zero" == say::in_english(0ULL));
 }
 
-BOOST_AUTO_TEST_CASE(twenty) {
-  BOOST_REQUIRE_EQUAL("twenty", say::in_english(20ULL));
-}
-BOOST_AUTO_TEST_CASE(twenty_two) {
-  BOOST_REQUIRE_EQUAL("twenty-two", say::in_english(22ULL));
-}
-
-BOOST_AUTO_TEST_CASE(sixty_nine) {
-  BOOST_REQUIRE_EQUAL("sixty-nine", say::in_english(69ULL));
-}
-BOOST_AUTO_TEST_CASE(eighty) {
-  BOOST_REQUIRE_EQUAL("eighty", say::in_english(80ULL));
+#if defined(EXERCISM_RUN_ALL_TESTS)
+TEST_CASE("one")
+{
+    REQUIRE("one" == say::in_english(1ULL));
 }
 
-BOOST_AUTO_TEST_CASE(one_hundred) {
-  BOOST_REQUIRE_EQUAL("one hundred", say::in_english(100ULL));
+TEST_CASE("fourteen")
+{
+    REQUIRE("fourteen" == say::in_english(14ULL));
 }
 
-BOOST_AUTO_TEST_CASE(one_hundred_twenty_three) {
-  BOOST_REQUIRE_EQUAL("one hundred twenty-three", say::in_english(123ULL));
-}
-BOOST_AUTO_TEST_CASE(one_thousand) {
-  BOOST_REQUIRE_EQUAL("one thousand", say::in_english(1000ULL));
+TEST_CASE("twenty")
+{
+    REQUIRE("twenty" == say::in_english(20ULL));
 }
 
-BOOST_AUTO_TEST_CASE(one_thousand_two_hundred_thirty_four) {
-  BOOST_REQUIRE_EQUAL("one thousand two hundred thirty-four",
-                      say::in_english(1234ULL));
-}
-BOOST_AUTO_TEST_CASE(one_million) {
-  BOOST_REQUIRE_EQUAL("one million", say::in_english(1000ULL * 1000ULL));
+TEST_CASE("twenty_two")
+{
+    REQUIRE("twenty-two" == say::in_english(22ULL));
 }
 
-BOOST_AUTO_TEST_CASE(one_million_two) {
-  BOOST_REQUIRE_EQUAL("one million two",
-                      say::in_english(1000ULL * 1000ULL + 2ULL));
+TEST_CASE("sixty_nine")
+{
+    REQUIRE("sixty-nine" == say::in_english(69ULL));
 }
 
-BOOST_AUTO_TEST_CASE(one_million_two_thousand_three_hundred_forty_five) {
-  BOOST_REQUIRE_EQUAL("one million two thousand three hundred forty-five",
-                      say::in_english(1002345ULL));
+TEST_CASE("one_hundred")
+{
+    REQUIRE("one hundred" == say::in_english(100ULL));
 }
 
-BOOST_AUTO_TEST_CASE(one_billion) {
-  BOOST_REQUIRE_EQUAL("one billion",
-                      say::in_english(1000ULL * 1000ULL * 1000ULL));
-}
-BOOST_AUTO_TEST_CASE(a_really_big_number) {
-  BOOST_REQUIRE_EQUAL(
-      "nine hundred eighty-seven billion"
-      " six hundred fifty-four million"
-      " three hundred twenty-one thousand"
-      " one hundred twenty-three",
-      say::in_english(987654321123ULL));
+TEST_CASE("one_hundred_twenty_three")
+{
+    REQUIRE("one hundred twenty-three" == say::in_english(123ULL));
 }
 
-BOOST_AUTO_TEST_CASE(raises_an_error_below_zero) {
-  BOOST_REQUIRE_THROW(say::in_english(-1), std::domain_error);
+TEST_CASE("one_thousand")
+{
+    REQUIRE("one thousand" == say::in_english(1000ULL));
 }
 
-BOOST_AUTO_TEST_CASE(raises_an_error_for_one_trillion) {
-  BOOST_REQUIRE_THROW(say::in_english(1000ULL * 1000ULL * 1000ULL * 1000ULL),
+TEST_CASE("one_thousand_two_hundred_thirty_four")
+{
+    REQUIRE("one thousand two hundred thirty-four" == say::in_english(1234ULL));
+}
+
+TEST_CASE("one_million")
+{
+    REQUIRE("one million" == say::in_english(1000ULL*1000ULL));
+}
+
+TEST_CASE("one_million_two")
+{
+    REQUIRE("one million two" == say::in_english(1000ULL*1000ULL + 2ULL));
+}
+
+TEST_CASE("one_million_two_thousand_three_hundred_forty_five")
+{
+    REQUIRE("one million two thousand three hundred forty-five" == say::in_english(1002345ULL));
+}
+
+TEST_CASE("one_billion")
+{
+    REQUIRE("one billion" == say::in_english(1000ULL*1000ULL*1000ULL));
+}
+
+TEST_CASE("a_really_big_number")
+{
+    REQUIRE(
+        "nine hundred eighty-seven billion six hundred fifty-four million "
+        "three hundred twenty-one thousand one hundred twenty-three" ==
+        say::in_english(987654321123ULL));
+}
+
+TEST_CASE("raises_an_error_below_zero")
+{
+    REQUIRE_THROWS_AS(say::in_english(-1), std::domain_error);
+}
+
+TEST_CASE("raises_an_error_for_one_trillion")
+{
+    REQUIRE_THROWS_AS(say::in_english(1000ULL * 1000ULL * 1000ULL * 1000ULL),
                       std::domain_error);
 }
-#if defined(EXERCISM_RUN_ALL_TESTS)
 #endif

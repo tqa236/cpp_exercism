@@ -1,5 +1,4 @@
 #include "say.h"
-#include <cmath>
 #include <map>
 #include <stdexcept>
 #include <vector>
@@ -11,7 +10,7 @@ using std::string;
 using std::vector;
 
 string say::in_english(int64_t number) {
-  if ((number < 0) || (number >= static_cast<int64_t>(1000000000000))) {
+  if ((number < 0) || (number >= 1'000'000'000'000)) {
     throw domain_error("Not in range.");
   }
   if (number == 0) {
@@ -47,10 +46,10 @@ string say::in_english(int64_t number) {
                                              {90, "ninety"},
                                              {100, "hundred"},
                                              {1000, "thousand"},
-                                             {1000000, "million"},
-                                             {1000000000, "billion"}};
+                                             {1'000'000, "million"},
+                                             {1'000'000'000, "billion"}};
   string spelling = "";
-  vector<int64_t> checkpoints = {1000000000, 1000000, 1000, 100};
+  vector<int64_t> checkpoints = {1'000'000'000, 1'000'000, 1000, 100};
   for (int64_t& checkpoint : checkpoints) {
     if (number >= checkpoint) {
       spelling += in_english(number / checkpoint) + " " + words.at(checkpoint);
