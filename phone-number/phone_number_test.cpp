@@ -1,6 +1,7 @@
 #include "phone_number.h"
 
 #include <exception>
+
 #include "test/catch.hpp"
 
 TEST_CASE("cleans_the_number") {

@@ -3,5 +3,5 @@
 using namespace std;
 
 namespace acronym {
-  string acronym(string);
+string acronym(string);
 }

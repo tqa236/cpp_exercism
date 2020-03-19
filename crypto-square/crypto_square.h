@@ -1,5 +1,6 @@
 #pragma once
 #include <math.h>
+
 #include <algorithm>
 #include <locale>
 #include <string>

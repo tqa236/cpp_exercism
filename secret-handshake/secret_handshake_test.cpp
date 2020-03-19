@@ -1,6 +1,8 @@
 #include "secret_handshake.h"
+
 #include <string>
 #include <vector>
+
 #include "test/catch.hpp"
 
 using namespace std;

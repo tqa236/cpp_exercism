@@ -1,4 +1,5 @@
 #include "difference_of_squares.h"
+
 #include "test/catch.hpp"
 
 TEST_CASE("up_to_5") {

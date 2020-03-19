@@ -1,4 +1,5 @@
 #include "pangram.h"
+
 #include "test/catch.hpp"
 
 TEST_CASE("sentence_empty") { REQUIRE(!pangram::is_pangram("")); }

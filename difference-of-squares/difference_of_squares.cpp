@@ -1,4 +1,5 @@
 #include "difference_of_squares.h"
+
 #include <cmath>
 #include <iostream>
 

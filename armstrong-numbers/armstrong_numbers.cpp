@@ -1,4 +1,5 @@
 #include "armstrong_numbers.h"
+
 #include <cmath>
 #include <string>
 

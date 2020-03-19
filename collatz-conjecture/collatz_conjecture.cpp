@@ -1,4 +1,5 @@
 #include "collatz_conjecture.h"
+
 #include <stdexcept>
 
 using std::domain_error;

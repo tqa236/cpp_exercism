@@ -1,4 +1,5 @@
 #include "anagram.h"
+
 #include <iostream>
 
 namespace anagram {

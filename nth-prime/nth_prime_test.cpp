@@ -1,5 +1,7 @@
 #include "nth_prime.h"
+
 #include <stdexcept>
+
 #include "test/catch.hpp"
 
 TEST_CASE("first") { REQUIRE(2 == nth_prime::nth(1)); }

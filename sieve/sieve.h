@@ -4,5 +4,5 @@
 using namespace std;
 
 namespace sieve {
-  vector<int> primes(int);
+vector<int> primes(int);
 }

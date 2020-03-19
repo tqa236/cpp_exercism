@@ -1,4 +1,5 @@
 #include "atbash_cipher.h"
+
 #include "test/catch.hpp"
 
 TEST_CASE("encode_yes") { REQUIRE("bvh" == atbash_cipher::encode("yes")); }

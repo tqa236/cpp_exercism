@@ -5,3 +5,9 @@
 [![codecov](https://codecov.io/gh/tqa236/cpp_exercism/branch/master/graph/badge.svg)](https://codecov.io/gh/tqa236/cpp_exercism)
 
 Learn C++ in a TDD environment with Exercism
+
+Code formatting
+
+```bash
+clang-format -i -style=google **/*.cpp **/*.h
+```

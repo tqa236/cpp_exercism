@@ -5,9 +5,9 @@
 #include <vector>
 
 namespace series {
-    using namespace std;
-    vector<int> digits(string);
-    vector<vector<int>> slice(string, int);
-}
+using namespace std;
+vector<int> digits(string);
+vector<vector<int>> slice(string, int);
+}  // namespace series
 
 #endif

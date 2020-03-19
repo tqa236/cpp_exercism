@@ -1,6 +1,8 @@
 #include "nucleotide_count.h"
+
 #include <map>
 #include <stdexcept>
+
 #include "test/catch.hpp"
 
 TEST_CASE("has_no_nucleotides") {

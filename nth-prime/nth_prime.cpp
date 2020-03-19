@@ -1,5 +1,7 @@
 #include "nth_prime.h"
+
 #include <math.h>
+
 #include <iostream>
 #include <string>
 #include <vector>

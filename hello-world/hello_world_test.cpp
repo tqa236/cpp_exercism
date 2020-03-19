@@ -5,8 +5,7 @@
 #include "test/catch.hpp"
 
 // Declares a single test.
-TEST_CASE("test_hello")
-{
-    // Check if your function returns "Hello, World!".
-    REQUIRE(hello_world::hello() == "Hello, World!");
+TEST_CASE("test_hello") {
+  // Check if your function returns "Hello, World!".
+  REQUIRE(hello_world::hello() == "Hello, World!");
 }

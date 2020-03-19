@@ -1,4 +1,5 @@
 #include "isogram.h"
+
 #include <algorithm>
 #include <bitset>
 #include <stdexcept>

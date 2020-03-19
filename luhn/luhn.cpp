@@ -1,4 +1,5 @@
 #include "luhn.h"
+
 #include <algorithm>
 
 using std::reverse;

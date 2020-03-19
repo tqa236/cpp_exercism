@@ -1,4 +1,5 @@
 #include "pangram.h"
+
 #include <algorithm>
 #include <bitset>
 #include <stdexcept>

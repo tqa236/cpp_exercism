@@ -1,4 +1,5 @@
 #include "binary_search.h"
+
 #include <algorithm>
 #include <stdexcept>
 

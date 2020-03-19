@@ -1,4 +1,5 @@
 #include "beer_song.h"
+
 #include <algorithm>
 #include <stdexcept>
 

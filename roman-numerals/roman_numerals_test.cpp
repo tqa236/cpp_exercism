@@ -1,4 +1,5 @@
 #include "roman_numerals.h"
+
 #include "test/catch.hpp"
 
 TEST_CASE("one_yields_I") { REQUIRE("I" == roman_numerals::convert(1)); }

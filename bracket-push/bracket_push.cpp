@@ -1,4 +1,5 @@
 #include "bracket_push.h"
+
 #include <algorithm>
 #include <vector>
 

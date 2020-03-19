@@ -1,4 +1,5 @@
 #include "pascals_triangle.h"
+
 #include <algorithm>
 #include <functional>
 

@@ -4,5 +4,5 @@
 using std::vector;
 
 namespace pascals_triangle {
-    vector<vector<int>> generate_rows(int);
+vector<vector<int>> generate_rows(int);
 }

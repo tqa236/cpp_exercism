@@ -1,4 +1,5 @@
 #include "atbash_cipher.h"
+
 #include <algorithm>
 
 using namespace std;
