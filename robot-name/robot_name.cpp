@@ -19,7 +19,7 @@ void robot::gen_name() {
 
 robot::robot() { gen_name(); }
 
-string robot::name() const& { return name_; }
+string robot::name() const { return name_; }
 
 void robot::reset() {
   name_.clear();
