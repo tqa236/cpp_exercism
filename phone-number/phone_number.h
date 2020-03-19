@@ -3,6 +3,8 @@
 
 using std::string;
 
+namespace phone_number {
+
 class phone_number {
  private:
   string only_number = "";
@@ -23,3 +25,4 @@ class phone_number {
   };
   operator string() const;
 };
+}  // namespace phone_number

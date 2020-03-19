@@ -1,6 +1,7 @@
 #include "phone_number.h"
 
 using std::string;
+namespace phone_number {
 
 string phone_number::valid_phone_number() {
   if ((only_number.length() < 10) || (only_number.length() > 11)) {
@@ -16,3 +17,4 @@ phone_number::operator string() const {
                          "-" + only_number.substr(6, 4);
   return pretty_number;
 }
+}  // namespace phone_number
