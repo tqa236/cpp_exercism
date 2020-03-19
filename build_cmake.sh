@@ -6,7 +6,7 @@ for path in */; do
 
     cd "$dirname" || exit
     if ! [ -d "./build" ]; then
-      cat "../code_coverage_CMake.txt" >> "CMakeLists.txt"
+      # cat "../code_coverage_CMake.txt" >> "CMakeLists.txt"
       file_name=${path::-1}
       file_name=${file_name//-/_}
       echo "$file_name"
@@ -14,7 +14,8 @@ for path in */; do
       echo "$file_name"
       mkdir build
       cd build || exit
-      cmake -DBoost_USE_STATIC_LIBS=ON -G "Unix Makefiles" ..
+      cmake -G "Unix Makefiles" ..
+      # cmake -DBoost_USE_STATIC_LIBS=ON -G "Unix Makefiles" ..
       cd ../.. || exit
     else
       cd ..
