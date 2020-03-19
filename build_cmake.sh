@@ -12,10 +12,10 @@ for path in */; do
       touch "$file_name.h" "$file_name.cpp"
       echo "$file_name"
       mkdir build
-      cd build || exit
-      cmake -DEXERCISM_RUN_ALL_TESTS=1 -G "Unix Makefiles" ..
-      cd ../.. || exit
     else
       cd ..
     fi
+    cd "$dirname/build" || exit
+    cmake -DEXERCISM_RUN_ALL_TESTS=1 -G "Unix Makefiles" ..
+    cd ../.. || exit
 done
