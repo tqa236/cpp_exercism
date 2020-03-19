@@ -11,6 +11,15 @@ map<string, string> translator = {
     {"UAU", "Tyrosine"},   {"UAC", "Tyrosine"},      {"UGU", "Cysteine"},
     {"UGC", "Cysteine"},   {"UGG", "Tryptophan"},    {"UAA", "STOP"},
     {"UAG", "STOP"},       {"UGA", "STOP"}};
-vector<string> proteins(string adn) { return vector<string>{translator[adn]}; }
+vector<string> proteins(string adn) {
+  string protein;
+  vector<string> protein_names;
+  for (auto i = 0; i < (int)adn.length(); i = i + 3) {
+    protein = translator[adn.substr(i, 3)];
+    if (protein == "STOP") break;
+    protein_names.push_back(protein);
+  };
+  return protein_names;
+}
 
 }  // namespace protein_translation
