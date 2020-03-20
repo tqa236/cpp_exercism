@@ -38,7 +38,7 @@ install:
 script:
   - ./build_cmake.sh
   - ./test.sh
-  - ./get_code_cov
+  - ./get_code_cov.sh
   - codecov
 
 after_success:
