@@ -31,13 +31,13 @@ install:
   - sudo apt-get -y install cmake ninja-build
   - sudo apt-get -y install libboost-all-dev
   # - sudo pip install codecov
-  # - sudo apt-get install ggcov
+  - sudo apt-get install ggcov gcc-9 g++-9
   - export CXX=${COMPILER}
   - ${CXX} --version
 
 script:
-  # - ./build_cmake.sh
-  # - ./test.sh
+  - ./build_cmake.sh
+  - ./test.sh
   # - ./get_code_cov.sh
   # - codecov
 

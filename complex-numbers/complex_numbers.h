@@ -2,12 +2,13 @@
 #define COMPLEX_NUMBERS_H
 
 namespace complex_numbers {
-class Complex {
+struct Complex {
  private:
   double real_;
   double imaginary_;
 
  public:
+  Complex(double, double);
   double real();
   double imaginary();
 };
