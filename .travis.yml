@@ -46,8 +46,9 @@ script:
 
 after_success:
 - find /usr -name gcov
+- find . *.gcov
 # - bash <(curl -s https://codecov.io/bash)
-- lcov --gcov-tool /usr/bin/gcov-8 --capture --directory . --output-file coverage.info
+- lcov --gcov-tool /usr/bin/gcov-8 --capture --base-directory . --directory . --output-file coverage.info
 - lcov --gcov-tool /usr/bin/gcov-8 --remove coverage.info '/usr/*' --output-file coverage.info
 - lcov --gcov-tool /usr/bin/gcov-8 --list coverage.info
 - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
