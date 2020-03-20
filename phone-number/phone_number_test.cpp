@@ -9,7 +9,7 @@ TEST_CASE("cleans_the_number") {
           phone_number::phone_number("(223) 456-7890").number());
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 
 TEST_CASE("cleans_numbers_with_dots") {
   REQUIRE("2234567890" == phone_number::phone_number("223.456.7890").number());
@@ -102,4 +102,4 @@ TEST_CASE("invalid_if_exchange_code_starts_with_1_on_valid_11_digit_number") {
                     std::domain_error);
 }
 
-#endif
+

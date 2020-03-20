@@ -36,7 +36,7 @@ BOOST_AUTO_TEST_CASE(data_is_retained) {
   test_leaf<uint32_t>(tested, 4, false, false);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 
 BOOST_AUTO_TEST_CASE(smaller_number_at_left_node) {
   auto tested = make_tree<uint32_t>({4, 2});
@@ -126,4 +126,4 @@ BOOST_AUTO_TEST_CASE(can_sort_complex_tree_strings) {
       {"A", "be", "few", "random", "should", "sorted", "strings", "that"});
 }
 
-#endif
+

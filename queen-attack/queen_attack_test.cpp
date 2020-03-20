@@ -11,7 +11,7 @@ TEST_CASE("queens_in_default_positions") {
   REQUIRE(std::make_pair(7, 3).second == board.black().second);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("initialized_with_specific_positions") {
   const auto white = std::make_pair(3, 7);
   const auto black = std::make_pair(6, 1);
@@ -99,4 +99,4 @@ TEST_CASE("queens_cannot_attack_if_not_on_same_row_column_or_diagonal") {
 
   REQUIRE(!board.can_attack());
 }
-#endif
+

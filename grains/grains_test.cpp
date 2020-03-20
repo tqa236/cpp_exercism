@@ -4,7 +4,7 @@
 
 TEST_CASE("square_1") { REQUIRE(1ULL == grains::square(1)); }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("square_2") { REQUIRE(2ULL == grains::square(2)); }
 
 TEST_CASE("square_3") { REQUIRE(4ULL == grains::square(3)); }
@@ -20,4 +20,4 @@ TEST_CASE("square_64") {
 }
 
 TEST_CASE("total") { REQUIRE(18446744073709551615ULL == grains::total()); }
-#endif
+

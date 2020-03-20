@@ -8,7 +8,7 @@ TEST_CASE("no_difference_between_identical_strands") {
   REQUIRE(0 == hamming::compute("A", "A"));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("complete_hamming_distance_for_single_nucleotide_strand") {
   REQUIRE(1 == hamming::compute("A", "G"));
 }
@@ -40,4 +40,4 @@ TEST_CASE("large_hamming_distance") {
 TEST_CASE("hamming_distance_in_very_long_strand") {
   REQUIRE(9 == hamming::compute("GGACGGATTCTG", "AGGACGGATTCT"));
 }
-#endif
+

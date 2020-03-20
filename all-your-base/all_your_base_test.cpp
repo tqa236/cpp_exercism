@@ -14,7 +14,6 @@ TEST_CASE("single_bit_one_to_decimal") {
   REQUIRE(expected == out_digits);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("binary_to_single_decimal") {
   vector<unsigned int> in_digits{1, 0, 1};
   vector<unsigned int> expected{5};
@@ -137,5 +136,3 @@ TEST_CASE("second_base_is_zero") {
   REQUIRE_THROWS_AS(all_your_base::convert(10, in_digits, 0),
                     std::invalid_argument);
 }
-
-#endif

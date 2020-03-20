@@ -14,7 +14,7 @@ TEST_CASE("short_digits") {
   REQUIRE(expected == actual);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("long_digits") {
   const vector<int> expected{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
@@ -91,4 +91,4 @@ TEST_CASE("can_slice_by_5") {
 TEST_CASE("domain_error_if_not_enough_digits_to_slice") {
   REQUIRE_THROWS_AS(series::slice("01032987583", 12), domain_error);
 }
-#endif
+

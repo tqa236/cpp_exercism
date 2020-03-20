@@ -4,7 +4,7 @@
 
 TEST_CASE("paired_square_brackets") { REQUIRE(matching_brackets::check("[]")); }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("empty_string") { REQUIRE(matching_brackets::check("")); }
 
 TEST_CASE("unpaired_brackets") { REQUIRE(!matching_brackets::check("[[")); }
@@ -52,4 +52,4 @@ TEST_CASE("complex_latex_expression") {
       "\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 "
       "\\end{array}\\right)"));
 }
-#endif
+

@@ -57,5 +57,5 @@ TEST_CASE("do_nothing_for_zero") {
   REQUIRE(vector<string>{} == secret_handshake::commands(0));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
-#endif  // !EXERCISM_RUN_ALL_TESTS
+
+

@@ -15,7 +15,7 @@ TEST_CASE("A_robots_is_created_with_a_position_and_a_direction") {
   REQUIRE(Bearing::NORTH == r.get_bearing());
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("Negative_positions_are_allowed") {
   const std::pair<int, int> robot_position{-1, -1};
   const Bearing robot_bearing{Bearing::SOUTH};
@@ -217,4 +217,4 @@ TEST_CASE("Instructions_to_move_east_and_north") {
   REQUIRE(expected_robot_position == r.get_position());
   REQUIRE(Bearing::NORTH == r.get_bearing());
 }
-#endif
+

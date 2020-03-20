@@ -4,7 +4,7 @@
 
 TEST_CASE("b1_is_decimal_1") { REQUIRE(1 == binary::convert("1")); }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("b10_is_decimal_2") { REQUIRE(2 == binary::convert("10")); }
 
 TEST_CASE("b11_is_decimal_3") { REQUIRE(3 == binary::convert("11")); }
@@ -24,4 +24,4 @@ TEST_CASE("carrot_is_decimal_0") { REQUIRE(0 == binary::convert("convert")); }
 TEST_CASE("x1100101b_is_decimal_0") {
   REQUIRE(0 == binary::convert("1100101b"));
 }
-#endif
+

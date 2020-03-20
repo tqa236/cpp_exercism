@@ -4,7 +4,7 @@
 
 TEST_CASE("one_yields_itself") { REQUIRE("1" == raindrops::convert(1)); }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("three_yields_pling") { REQUIRE("Pling" == raindrops::convert(3)); }
 
 TEST_CASE("five_yields_plang") { REQUIRE("Plang" == raindrops::convert(5)); }
@@ -52,4 +52,4 @@ TEST_CASE("one_hundred_five_yields_plingplangplong") {
 TEST_CASE("big_prime_yields_itself") {
   REQUIRE("12121" == raindrops::convert(12121));
 }
-#endif
+

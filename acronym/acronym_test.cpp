@@ -12,7 +12,7 @@ TEST_CASE("basic") {
   REQUIRE(expected == actual);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("lowercase_words") {
   const string actual = acronym::acronym("Ruby on Rails");
 
@@ -54,4 +54,4 @@ TEST_CASE("hyphenated") {
   REQUIRE(expected == actual);
 }
 
-#endif
+

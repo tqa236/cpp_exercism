@@ -4,7 +4,7 @@
 
 TEST_CASE("encode_yes") { REQUIRE("bvh" == atbash_cipher::encode("yes")); }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("encode_no") { REQUIRE("ml" == atbash_cipher::encode("no")); }
 
 TEST_CASE("encode_OMG") { REQUIRE("lnt" == atbash_cipher::encode("OMG")); }
@@ -47,4 +47,4 @@ TEST_CASE("decode_all_the_letters") {
   REQUIRE("thequickbrownfoxjumpsoverthelazydog" ==
           atbash_cipher::decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"));
 }
-#endif
+
