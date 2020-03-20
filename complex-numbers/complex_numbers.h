@@ -2,7 +2,15 @@
 #define COMPLEX_NUMBERS_H
 
 namespace complex_numbers {
-class Complex() {}
+class Complex {
+ private:
+  double real_;
+  double imaginary_;
+
+ public:
+  double real();
+  double imaginary();
+};
 
 }  // namespace complex_numbers
 
