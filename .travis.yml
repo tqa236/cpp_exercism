@@ -25,6 +25,7 @@ matrix:
             - lcov
 
 before_install:
+  - sudo apt install software-properties-common
   - sudo apt-get -y -d update
 
 install:
@@ -34,6 +35,7 @@ install:
   - sudo apt-get install ggcov gcc-9 g++-9
   - export CXX=${COMPILER}
   - ${CXX} --version
+  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
 
 script:
   - ./build_cmake.sh
@@ -44,7 +46,7 @@ script:
 after_success:
 - find /usr -name gcov
 # - bash <(curl -s https://codecov.io/bash)
-- lcov --gcov-tool /usr/bin/gcov --capture --directory . --output-file coverage.info
-- lcov --gcov-tool /usr/bin/gcov --remove coverage.info '/usr/*' --output-file coverage.info
-- lcov --gcov-tool /usr/bin/gcov --list coverage.info
+- lcov --gcov-tool /usr/bin/gcov-9 --capture --directory . --output-file coverage.info
+- lcov --gcov-tool /usr/bin/gcov-9 --remove coverage.info '/usr/*' --output-file coverage.info
+- lcov --gcov-tool /usr/bin/gcov-9 --list coverage.info
 - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
