@@ -4,17 +4,17 @@ os: linux
 
 matrix:
   include:
-    - env:
-      - COMPILER=clang++-7
-      addons:
-        apt:
-          sources:
-            - sourceline: "ppa:ubuntu-toolchain-r/test"
-            # - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
-            # key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
-          packages:
-            - clang-7
-            - lcov
+    # - env:
+    #   - COMPILER=clang++-7
+    #   addons:
+    #     apt:
+    #       sources:
+    #         - sourceline: "ppa:ubuntu-toolchain-r/test"
+    #         # - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
+    #         # key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
+    #       packages:
+    #         - clang-7
+    #         - lcov
     - env: COMPILER=g++-8
       addons:
         apt:
@@ -32,10 +32,11 @@ install:
   - sudo apt-get -y install cmake ninja-build
   - sudo apt-get -y install libboost-all-dev
   # - sudo pip install codecov
-  - sudo apt-get install ggcov gcc-9 g++-9
+  - sudo apt-get install ggcov
+  # - sudo apt-get install ggcov gcc-9 g++-9
   - export CXX=${COMPILER}
   - ${CXX} --version
-  - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
+  # - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
 
 script:
   - ./build_cmake.sh
@@ -46,7 +47,7 @@ script:
 after_success:
 - find /usr -name gcov
 # - bash <(curl -s https://codecov.io/bash)
-- lcov --gcov-tool /usr/bin/gcov-9 --capture --directory . --output-file coverage.info
-- lcov --gcov-tool /usr/bin/gcov-9 --remove coverage.info '/usr/*' --output-file coverage.info
-- lcov --gcov-tool /usr/bin/gcov-9 --list coverage.info
+- lcov --gcov-tool /usr/bin/gcov-8 --capture --directory . --output-file coverage.info
+- lcov --gcov-tool /usr/bin/gcov-8 --remove coverage.info '/usr/*' --output-file coverage.info
+- lcov --gcov-tool /usr/bin/gcov-8 --list coverage.info
 - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
