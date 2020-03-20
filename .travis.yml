@@ -30,6 +30,7 @@ before_install:
 install:
   - sudo apt-get -y install cmake ninja-build
   - sudo apt-get -y install libboost-all-dev
+  - sudo pip install codecov
   - export CXX=${COMPILER}
   - ${CXX} --version
 
