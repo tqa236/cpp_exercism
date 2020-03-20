@@ -30,20 +30,20 @@ before_install:
 install:
   - sudo apt-get -y install cmake ninja-build
   - sudo apt-get -y install libboost-all-dev
-  - sudo pip install codecov
-  - sudo apt-get install ggcov
+  # - sudo pip install codecov
+  # - sudo apt-get install ggcov
   - export CXX=${COMPILER}
   - ${CXX} --version
 
 script:
   - ./build_cmake.sh
   - ./test.sh
-  - ./get_code_cov.sh
-  - codecov
+  # - ./get_code_cov.sh
+  # - codecov
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-# - gcov --capture --directory . --output-file coverage.info
-# - gcov --remove coverage.info '/usr/*' --output-file coverage.info
-# - gcov --list coverage.info
-# - bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"
+# - bash <(curl -s https://codecov.io/bash)
+- lcov --capture --directory . --output-file coverage.info
+- lcov --remove coverage.info '/usr/*' --output-file coverage.info
+- lcov --list coverage.info
+- bash <(curl -s https://codecov.io/bash) -f coverage.info || echo "Codecov did not collect coverage reports"

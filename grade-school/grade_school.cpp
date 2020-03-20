@@ -7,7 +7,7 @@
 using namespace std;
 
 namespace grade_school {
-map<int, vector<string> > school::roster() { return class_roster; }
+map<int, vector<string> > school::roster() const { return class_roster; }
 void school::add(string name, int grade) {
   if (class_roster.find(grade) == class_roster.end()) {
     class_roster.insert(pair<int, vector<string> >(grade, {name}));

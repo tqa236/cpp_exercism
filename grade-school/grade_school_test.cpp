@@ -11,7 +11,6 @@ TEST_CASE("a_new_school_has_an_empty_roster") {
   REQUIRE(school_.roster().empty());
 }
 
-
 TEST_CASE("adding_a_student_adds_them_to_the_roster_for_the_given_grade") {
   grade_school::school school_;
   school_.add("Aimee", 2);
@@ -84,5 +83,3 @@ TEST_CASE("checking_a_grade_should_not_change_the_roster") {
   school_.grade(1);
   REQUIRE(school_.roster().empty());
 }
-
-
