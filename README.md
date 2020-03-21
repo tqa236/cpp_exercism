@@ -11,3 +11,7 @@ Code formatting
 ```bash
 clang-format -i -style=google **/*.cpp **/*.h
 ```
+
+## TODO
+
+-   Fix code coverage problem

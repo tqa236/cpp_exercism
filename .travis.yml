@@ -4,17 +4,17 @@ os: linux
 
 matrix:
   include:
-    # - env:
-    #   - COMPILER=clang++-7
-    #   addons:
-    #     apt:
-    #       sources:
-    #         - sourceline: "ppa:ubuntu-toolchain-r/test"
-    #         # - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
-    #         # key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
-    #       packages:
-    #         - clang-7
-    #         - lcov
+    - env:
+      - COMPILER=clang++-7
+      addons:
+        apt:
+          sources:
+            - sourceline: "ppa:ubuntu-toolchain-r/test"
+            # - sourceline: 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
+            # key_url: 'https://apt.llvm.org/llvm-snapshot.gpg.key'
+          packages:
+            - clang-7
+            - lcov
     - env: COMPILER=g++-8
       addons:
         apt:
@@ -46,7 +46,6 @@ script:
 
 after_success:
 - find /usr -name gcov
-- find . *.gcov
 # - bash <(curl -s https://codecov.io/bash)
 - lcov --gcov-tool /usr/bin/gcov-8 --capture --base-directory . --directory . --output-file coverage.info
 - lcov --gcov-tool /usr/bin/gcov-8 --remove coverage.info '/usr/*' --output-file coverage.info
