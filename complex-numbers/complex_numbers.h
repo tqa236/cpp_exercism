@@ -2,15 +2,22 @@
 #define COMPLEX_NUMBERS_H
 
 namespace complex_numbers {
-struct Complex {
+class Complex {
  private:
   double real_;
-  double imaginary_;
+  double imag_;
 
  public:
   Complex(double, double);
-  double real();
-  double imaginary();
+  double real() const;
+  double imag() const;
+  double abs() const;
+  Complex operator+(Complex const&) const;
+  Complex operator-(Complex const&) const;
+  Complex operator*(Complex const&) const;
+  Complex operator/(Complex const&) const;
+  Complex conj() const;
+  Complex exp() const;
 };
 
 }  // namespace complex_numbers
