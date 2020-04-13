@@ -1,33 +1,47 @@
 #include "crypto_square.h"
 
 namespace crypto_square {
-string cipher::normalize_plain_text() { return text; }
-vector<string> cipher::plain_text_segments() {
-  vector<string> encoded_text = {};
+cipher::cipher(std::string text) {
+  text.erase(std::remove_if(text.begin(), text.end(),
+                            [](char c) { return !std::isalnum(c); }),
+             text.end());
+  std::transform(text.begin(), text.end(), text.begin(), ::tolower);
+  this->text = text;
+  column_length = static_cast<int>(ceil(sqrt(text.size())));
+  if (column_length * column_length == text.size()) {
+    row_length = column_length;
+  } else {
+    row_length = column_length - 1;
+  }
+  segmented_text = plain_text_segments();
+}
+std::string cipher::normalize_plain_text() { return text; }
+std::vector<std::string> cipher::plain_text_segments() {
+  std::vector<std::string> encoded_text;
   for (unsigned int i = 0; i < text.size(); i = i + column_length) {
     encoded_text.push_back(text.substr(i, column_length));
   }
   return encoded_text;
 }
-string cipher::cipher_text() {
-  string ciphertext = normalized_cipher_text();
-  ciphertext.erase(remove_if(ciphertext.begin(), ciphertext.end(),
-                             [](char c) { return !isalnum(c); }),
-                   ciphertext.end());
-  return ciphertext;
+std::string cipher::cipher_text() {
+  std::string result = normalized_cipher_text();
+  result.erase(std::remove_if(result.begin(), result.end(),
+                              [](char c) { return !std::isalnum(c); }),
+               result.end());
+  return result;
 }
-string cipher::normalized_cipher_text() {
-  string normalized_cipher_text_ = "";
+std::string cipher::normalized_cipher_text() {
+  std::string result;
   for (unsigned int i = 0; i < column_length; i++) {
-    if (i > 0) normalized_cipher_text_.push_back(' ');
+    if (i > 0) result.push_back(' ');
     for (auto chunk : segmented_text) {
       if (i < chunk.size()) {
-        normalized_cipher_text_.push_back(chunk.at(i));
+        result.push_back(chunk[i]);
       } else {
-        normalized_cipher_text_.push_back(' ');
+        result.push_back(' ');
       }
     }
   }
-  return normalized_cipher_text_;
+  return result;
 }
 }  // namespace crypto_square

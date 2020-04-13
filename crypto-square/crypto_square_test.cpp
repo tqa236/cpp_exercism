@@ -6,7 +6,6 @@ TEST_CASE("normalize_capitals") {
   REQUIRE("hello" == crypto_square::cipher("Hello").normalize_plain_text());
 }
 
-
 TEST_CASE("normalize_spaces") {
   REQUIRE("hithere" ==
           crypto_square::cipher("Hi there").normalize_plain_text());
@@ -81,4 +80,3 @@ TEST_CASE("normalized_cipher_text_long_phrase") {
                                 "would have given us roots.")
               .normalized_cipher_text());
 }
-
