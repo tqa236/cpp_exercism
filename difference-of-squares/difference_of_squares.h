@@ -1,6 +1,4 @@
-#include <cmath>
-#include <iostream>
-using namespace std;
+#pragma once
 
 namespace difference_of_squares {
 int square_of_sum(int);

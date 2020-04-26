@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-int trinary::to_decimal(string tri_num) {
+int trinary::to_decimal(const string& tri_num) {
   int dec_num = 0;
   for (char c : tri_num) {
     if ((c < '0') || (c > '2')) {

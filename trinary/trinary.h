@@ -3,5 +3,5 @@
 
 namespace trinary {
 using namespace std;
-int to_decimal(string);
+int to_decimal(const string&);
 }  // namespace trinary

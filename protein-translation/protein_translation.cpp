@@ -12,7 +12,6 @@ const std::unordered_map<codon, polypeptide> translator = {
     {"UGC", "Cysteine"},   {"UGG", "Tryptophan"},    {"UAA", "STOP"},
     {"UAG", "STOP"},       {"UGA", "STOP"}};
 std::vector<codon> proteins(const ARN& arn) {
-  std::string protein;
   std::vector<polypeptide> protein_names;
   for (unsigned i = 0; i < arn.length(); i = i + 3) {
     std::string protein = translator.at(arn.substr(i, 3));
