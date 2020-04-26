@@ -1,5 +1,4 @@
-#if !defined(COMPLEX_NUMBERS_H)
-#define COMPLEX_NUMBERS_H
+#pragma once
 
 namespace complex_numbers {
 class Complex {
@@ -14,12 +13,10 @@ class Complex {
   double abs() const;
   Complex operator+(Complex const&) const;
   Complex operator-(Complex const&) const;
-  Complex operator*(Complex const&) const;
+  Complex operator*(Complex const&)const;
   Complex operator/(Complex const&) const;
   Complex conj() const;
   Complex exp() const;
 };
 
 }  // namespace complex_numbers
-
-#endif  // COMPLEX_NUMBERS_H

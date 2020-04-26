@@ -10,6 +10,8 @@ using Days = boost::gregorian::days;
 class scheduler {
  private:
   Date meeting_date;
+  Year year;
+  Month month;
 
  public:
   scheduler(Month month, Year year);
@@ -20,5 +22,6 @@ class scheduler {
   Date friteenth() const;
   Date saturteenth() const;
   Date sunteenth() const;
+  Date first_monday() const;
 };
 }  // namespace meetup

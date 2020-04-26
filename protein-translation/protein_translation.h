@@ -1,15 +1,14 @@
-#if !defined(PROTEIN_TRANSLATION_H)
-#define PROTEIN_TRANSLATION_H
+#pragma once
 
 #include <string>
 #include <vector>
 
 namespace protein_translation {
-using std::string;
-using std::vector;
 
-vector<string> proteins(string);
+typedef std::string codon;
+typedef std::string polypeptide;
+typedef std::string ARN;
+
+std::vector<polypeptide> proteins(const ARN&);
 
 }  // namespace protein_translation
-
-#endif  // PROTEIN_TRANSLATION_H

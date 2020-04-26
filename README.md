@@ -14,4 +14,6 @@ clang-format -i -style=google **/*.cpp **/*.h
 
 ## TODO
 
--   Fix code coverage problem
+-   Fix code coverage problem.
+-   Update all exercises remove using declaration usage.
+-   Use only #pragma once
