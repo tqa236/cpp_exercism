@@ -2,6 +2,5 @@
 #include <string>
 
 namespace isogram {
-using std::string;
-bool is_isogram(string);
+bool is_isogram(std::string);
 }  // namespace isogram

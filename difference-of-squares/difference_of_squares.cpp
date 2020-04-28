@@ -3,7 +3,7 @@
 #include <cmath>
 
 int difference_of_squares::square_of_sum(int num) {
-  return pow((num * (num + 1)) / 2, 2);
+  return std::pow((num * (num + 1)) / 2, 2);
 }
 
 int difference_of_squares::sum_of_squares(int num) {

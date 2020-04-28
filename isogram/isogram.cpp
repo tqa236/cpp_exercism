@@ -1,14 +1,8 @@
 #include "isogram.h"
-
-#include <algorithm>
 #include <bitset>
-#include <stdexcept>
 
-using std::bitset;
-using std::tolower;
-
-bool isogram::is_isogram(string phrase) {
-  bitset<26> letters;
+bool isogram::is_isogram(std::string phrase) {
+  std::bitset<26> letters;
   for (char c : phrase) {
     int position = tolower(c) - 'a';
     if ((position >= 0) && (position <= 25)) {
