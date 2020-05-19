@@ -1,17 +1,12 @@
 #include "bob.h"
 
-#include <cctype>
-#include <locale>
-
-using namespace std;
-
-string bob::hey(string text) {
+std::string bob::hey(std::string text) {
   bool no_lowercase = true;
   bool has_uppercase = false;
   bool is_question = false;
   bool is_empty = true;
   for (char& c : text) {
-    if (!isspace(c)) {
+    if (!std::isspace(c)) {
       is_question = false;
       is_empty = false;
     }
