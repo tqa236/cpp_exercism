@@ -1,14 +1,12 @@
 #include "triangle.h"
-
 #include <stdexcept>
-
 #include "test/catch.hpp"
 
 TEST_CASE("equilateral_triangles_have_equal_sides") {
   REQUIRE(triangle::flavor::equilateral == triangle::kind(2, 2, 2));
 }
 
-
+#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("larger_equilateral_triangles_also_have_equal_sides") {
   REQUIRE(triangle::flavor::equilateral == triangle::kind(10, 10, 10));
 }
@@ -61,3 +59,7 @@ TEST_CASE("larger_triangles_violating_triangle_inequality_are_illegal") {
   REQUIRE_THROWS_AS(triangle::kind(7, 3, 2), std::domain_error);
 }
 
+TEST_CASE("double_and_integer_arguments") {
+  REQUIRE(triangle::flavor::scalene == triangle::kind(5.5, 4, 2));
+}
+#endif
