@@ -1,12 +1,12 @@
 #include "isogram.h"
 #include <bitset>
 
-bool isogram::is_isogram(std::string phrase) {
+bool isogram::is_isogram(const std::string& phrase) {
   std::bitset<26> letters;
-  for (char c : phrase) {
-    int position = tolower(c) - 'a';
+  for (unsigned char c : phrase) {
+    int position = std::tolower(c) - 'a';
     if ((position >= 0) && (position <= 25)) {
-      if (letters[position] == 1) {
+      if (letters[position]) {
         return false;
       }
       letters.set(position);

@@ -15,7 +15,7 @@ cipher::cipher(std::string text) {
   }
   segmented_text = plain_text_segments();
 }
-std::string cipher::normalize_plain_text() { return text; }
+std::string const& cipher::normalize_plain_text() { return text; }
 std::vector<std::string> cipher::plain_text_segments() {
   std::vector<std::string> encoded_text;
   for (unsigned int i = 0; i < text.size(); i = i + column_length) {
@@ -24,10 +24,14 @@ std::vector<std::string> cipher::plain_text_segments() {
   return encoded_text;
 }
 std::string cipher::cipher_text() {
-  std::string result = normalized_cipher_text();
-  result.erase(std::remove_if(result.begin(), result.end(),
-                              [](char c) { return !std::isalnum(c); }),
-               result.end());
+  std::string result;
+  for (unsigned int i = 0; i < column_length; i++) {
+    for (auto chunk : segmented_text) {
+      if (i < chunk.size()) {
+        result.push_back(chunk[i]);
+      }
+    }
+  }
   return result;
 }
 std::string cipher::normalized_cipher_text() {
