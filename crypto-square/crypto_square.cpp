@@ -1,4 +1,6 @@
 #include "crypto_square.h"
+#include <algorithm>
+#include <cmath>
 
 namespace crypto_square {
 cipher::cipher(std::string text) {
@@ -6,8 +8,8 @@ cipher::cipher(std::string text) {
                             [](char c) { return !std::isalnum(c); }),
              text.end());
   std::transform(text.begin(), text.end(), text.begin(), ::tolower);
-  this->text = text;
   column_length = static_cast<int>(ceil(sqrt(text.size())));
+  this->text = std::move(text);
   if (column_length * column_length == text.size()) {
     row_length = column_length;
   } else {

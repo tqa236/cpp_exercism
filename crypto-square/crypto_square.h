@@ -1,6 +1,4 @@
 #pragma once
-#include <algorithm>
-#include <cmath>
 #include <string>
 #include <vector>
 
@@ -14,7 +12,7 @@ class cipher {
   unsigned int row_length;
 
  public:
-  explicit cipher(std::string text);
+  explicit cipher(std::string);
   std::string const& normalize_plain_text();
   std::vector<std::string> plain_text_segments();
   std::string cipher_text();
