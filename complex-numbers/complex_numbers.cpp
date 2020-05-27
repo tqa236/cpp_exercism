@@ -1,12 +1,9 @@
 #include "complex_numbers.h"
 
-#include <math.h>
+#include <cmath>
 
 namespace complex_numbers {
-Complex::Complex(double real_, double imag_) {
-  this->real_ = real_;
-  this->imag_ = imag_;
-}
+Complex::Complex(double real_, double imag_) : real_(real_), imag_(imag_) {}
 double Complex::real() const { return real_; }
 double Complex::imag() const { return imag_; }
 double Complex::abs() const { return sqrt(real_ * real_ + imag_ * imag_); }
@@ -27,7 +24,7 @@ Complex Complex::operator/(Complex const &obj) const {
 }
 Complex Complex::conj() const { return Complex(real_, -imag_); }
 Complex Complex::exp() const {
-  double common_factor = ::exp(real_);
+  double common_factor = std::exp(real_);
   return Complex(common_factor * cos(imag_), common_factor * sin(imag_));
 }
 }  // namespace complex_numbers
