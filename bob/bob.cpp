@@ -10,10 +10,10 @@ std::string bob::hey(std::string text) {
       is_question = false;
       is_empty = false;
     }
-    if ((c >= 'a') && (c <= 'z')) {
+    if (std::islower(c)) {
       no_lowercase = false;
     }
-    if ((c >= 'A') && (c <= 'Z')) {
+    if (std::isupper(c)) {
       has_uppercase = true;
     }
     if (c == '?') {

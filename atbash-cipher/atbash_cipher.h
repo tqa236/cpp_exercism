@@ -1,11 +1,7 @@
-#if !defined(ATBASH_CIPHER_H)
-#define ATBASH_CIPHER_H
+#pragma once
 #include <string>
 
 namespace atbash_cipher {
-using namespace std;
-string encode(string);
-string decode(string);
+std::string encode(std::string);
+std::string decode(std::string);
 }  // namespace atbash_cipher
-
-#endif
