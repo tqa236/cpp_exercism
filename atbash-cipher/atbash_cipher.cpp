@@ -1,27 +1,28 @@
 #include "atbash_cipher.h"
 #include <algorithm>
 
-std::string atbash_cipher::encode(std::string text) {
+std::string atbash_cipher::transform(std::string text, bool add_space) {
   std::string cipher;
   int count = 0;
-  std::replace_if(text.begin(), text.end(), ::ispunct, ' ');
-  text.erase(remove(text.begin(), text.end(), ' '), text.end());
   for (const char& c : text) {
-    if ((count % 5 == 0) && (count > 0)) {
-      cipher = cipher + ' ';
+    if (::ispunct(c) || c == ' ') continue;
+    if (add_space && (count % 5 == 0) && (count > 0)) {
+      cipher += ' ';
     }
     if (isdigit(c)) {
-      cipher = cipher + c;
+      cipher += c;
     } else {
-      cipher = cipher + (char)('a' + 'z' - tolower(c));
+      cipher += (char)('a' + 'z' - tolower(c));
     }
-    count = count + 1;
+    count += 1;
   }
   return cipher;
 }
 
+std::string atbash_cipher::encode(std::string text) {
+  return transform(text, true);
+}
+
 std::string atbash_cipher::decode(std::string text) {
-  std::string cipher = atbash_cipher::encode(text);
-  cipher.erase(remove(cipher.begin(), cipher.end(), ' '), cipher.end());
-  return cipher;
+  return transform(text, false);
 }
