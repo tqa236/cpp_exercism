@@ -4,7 +4,7 @@
 std::string atbash_cipher::transform(const std::string& text, bool add_space) {
   std::string cipher;
   int count = 0;
-  for (const char& c : text) {
+  for (char c : text) {
     if (::ispunct(c) || c == ' ') continue;
     if (add_space && (count % 5 == 0) && (count > 0)) {
       cipher += ' ';
