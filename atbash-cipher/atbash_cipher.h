@@ -2,7 +2,7 @@
 #include <string>
 
 namespace atbash_cipher {
-std::string encode(std::string);
-std::string decode(std::string);
-std::string transform(std::string, bool);
+std::string encode(const std::string &);
+std::string decode(const std::string &);
+std::string transform(const std::string &, bool);
 }  // namespace atbash_cipher

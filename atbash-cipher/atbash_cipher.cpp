@@ -1,7 +1,7 @@
 #include "atbash_cipher.h"
 #include <algorithm>
 
-std::string atbash_cipher::transform(std::string text, bool add_space) {
+std::string atbash_cipher::transform(const std::string& text, bool add_space) {
   std::string cipher;
   int count = 0;
   for (const char& c : text) {
@@ -19,10 +19,10 @@ std::string atbash_cipher::transform(std::string text, bool add_space) {
   return cipher;
 }
 
-std::string atbash_cipher::encode(std::string text) {
+std::string atbash_cipher::encode(const std::string& text) {
   return transform(text, true);
 }
 
-std::string atbash_cipher::decode(std::string text) {
+std::string atbash_cipher::decode(const std::string& text) {
   return transform(text, false);
 }
