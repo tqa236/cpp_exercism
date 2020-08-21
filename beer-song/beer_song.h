@@ -2,7 +2,7 @@
 #include <string>
 
 namespace beer_song {
-std::string verse(int);
-std::string sing(int, int);
-std::string sing(int);
+std::string verse(int verse_num);
+std::string sing(int start, int end);
+std::string sing(int start);
 }  // namespace beer_song

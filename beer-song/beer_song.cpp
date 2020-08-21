@@ -1,8 +1,5 @@
 #include "beer_song.h"
 
-#include <algorithm>
-#include <stdexcept>
-
 std::string beer_song::verse(int verse_num) {
   if (verse_num == 0) {
     return "No more bottles of beer on the wall, no more bottles of beer.\nGo "
@@ -28,10 +25,11 @@ std::string beer_song::verse(int verse_num) {
 
 std::string beer_song::sing(int start, int end) {
   std::string lyrics = "";
-  for (int i = start; i > end - 1; i = i - 1) {
-    lyrics = lyrics + "\n" + beer_song::verse(i);
+  for (int i = start; i > end - 1; --i) {
+    lyrics += beer_song::verse(i) + "\n";
   }
-  return lyrics.erase(0, 1);
+  lyrics.pop_back();
+  return lyrics;
   ;
 }
 
