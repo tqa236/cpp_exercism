@@ -10,10 +10,10 @@ class anagram {
   std::string word;
   std::string lower_word;
   std::string normalized_word;
-  std::tuple<std::string, std::string> process_word(std::string);
+  std::tuple<std::string, std::string> process_word(std::string const&);
 
  public:
-  explicit anagram(std::string word) {
+  explicit anagram(std::string const& word) {
     this->word = word;
     std::tuple<std::string, std::string> processed_words = process_word(word);
     lower_word = std::get<0>(processed_words);

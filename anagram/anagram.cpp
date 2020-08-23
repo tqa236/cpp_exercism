@@ -2,7 +2,8 @@
 #include <algorithm>
 
 namespace anagram {
-std::tuple<std::string, std::string> anagram::process_word(std::string word) {
+std::tuple<std::string, std::string> anagram::process_word(
+    std::string const& word) {
   auto lower_word_ = word;
   transform(lower_word_.begin(), lower_word_.end(), lower_word_.begin(),
             ::tolower);
