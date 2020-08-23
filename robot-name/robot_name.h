@@ -1,18 +1,18 @@
 #pragma once
 #include <string>
+#include <vector>
 
 namespace robot_name {
-using std::string;
+static std::vector<std::string> used_names;
 class robot {
  private:
-  string name_ = "";
-  char random_char();
-  char random_digit();
-  void gen_name();
+  robot(const robot&);
+  robot& operator=(const robot&);
+  std::string name_ = "";
 
  public:
   robot();
-  string name() const;
+  std::string name() const&;
   void reset();
 };
 }  // namespace robot_name

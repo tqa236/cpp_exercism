@@ -1,7 +1,6 @@
-#include <iostream>
-
-using namespace std;
+#pragma once
+#include <string>
 
 namespace reverse_string {
-string reverse_string(string);
+std::string reverse_string(std::string s);
 }

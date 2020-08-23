@@ -3,19 +3,15 @@
 #include <map>
 #include <vector>
 
-bool matching_brackets::check(std::string phrase) {
+bool matching_brackets::check(std::string const& phrase) {
   std::vector<char> bracket;
   std::map<char, char> brackets = {{'(', ')'}, {'[', ']'}, {'{', '}'}};
-  for (char const& c : phrase) {
+  for (char c : phrase) {
     if (c == '(' || c == '[' || c == '{') {
       bracket.push_back(c);
     } else if (c == ')' || c == ']' || c == '}') {
-      if (bracket.empty())
-        return false;
-      else {
-        if (c != brackets[bracket.back()]) return false;
-        bracket.pop_back();
-      }
+      if (bracket.empty() || c != brackets[bracket.back()]) return false;
+      bracket.pop_back();
     }
   }
   return bracket.empty();

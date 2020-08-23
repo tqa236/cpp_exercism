@@ -1,28 +1,43 @@
 #include "robot_name.h"
-
-using std::string;
+#include <algorithm>
+#include <random>
 
 namespace robot_name {
 
-char robot::random_char() { return (std::rand() % 26) + 'A'; }
-
-char robot::random_digit() { return (std::rand() % 10) + '0'; }
-
-void robot::gen_name() {
-  name_.push_back(random_char());
-  name_.push_back(random_char());
-
-  name_.push_back(random_digit());
-  name_.push_back(random_digit());
-  name_.push_back(random_digit());
+char random_char() {
+  std::random_device rd;
+  std::mt19937 gen(rd());
+  std::uniform_int_distribution<> distrib(0, 25);
+  return (distrib(gen) % 26) + 'A';
+}
+char random_digit() {
+  std::random_device rd;
+  std::mt19937 gen(rd());
+  std::uniform_int_distribution<> distrib(0, 9);
+  return (distrib(gen) % 10) + '0';
 }
 
-robot::robot() { gen_name(); }
+std::string gen_name() {
+  std::string name_ = "";
+  name_.push_back(robot_name::random_char());
+  name_.push_back(robot_name::random_char());
 
-string robot::name() const { return name_; }
+  name_.push_back(robot_name::random_digit());
+  name_.push_back(robot_name::random_digit());
+  name_.push_back(robot_name::random_digit());
+  return name_;
+}
+
+robot::robot() { reset(); }
+
+std::string robot::name() const& { return name_; }
 
 void robot::reset() {
-  name_.clear();
-  gen_name();
+  std::string old_name = name_;
+  while (old_name == name_ || std::find(used_names.begin(), used_names.end(),
+                                        name_) != used_names.end()) {
+    name_ = robot_name::gen_name();
+  }
+  used_names.push_back(name_);
 }
 }  // namespace robot_name

@@ -1,7 +1,6 @@
+#pragma once
 #include <string>
 
-using namespace std;
-
 namespace scrabble_score {
-int score(const string);
-}
+int score(std::string const& word);
+}  // namespace scrabble_score
