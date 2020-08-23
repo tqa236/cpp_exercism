@@ -1,28 +1,22 @@
 #include "matching_brackets.h"
 
-#include <algorithm>
+#include <map>
 #include <vector>
 
 bool matching_brackets::check(std::string phrase) {
-  phrase.erase(
-      std::remove_if(phrase.begin(), phrase.end(),
-                     [](char c) {
-                       std::string all_brackets = "()[]{}";
-                       return !(all_brackets.find(c) != std::string::npos);
-                     }),
-      phrase.end());
-
-  std::vector<std::string> brackets = {"()", "[]", "{}"};
-  bool stop = false;
-  while (!stop) {
-    stop = true;
-    for (auto const& bracket : brackets) {
-      size_t position = phrase.find(bracket);
-      if (position != std::string::npos) {
-        stop = false;
-        phrase.replace(position, bracket.length(), "");
+  std::vector<char> bracket;
+  std::map<char, char> brackets = {{'(', ')'}, {'[', ']'}, {'{', '}'}};
+  for (char const& c : phrase) {
+    if (c == '(' || c == '[' || c == '{') {
+      bracket.push_back(c);
+    } else if (c == ')' || c == ']' || c == '}') {
+      if (bracket.empty())
+        return false;
+      else {
+        if (c != brackets[bracket.back()]) return false;
+        bracket.pop_back();
       }
     }
   }
-  return phrase == "";
+  return bracket.empty();
 }
