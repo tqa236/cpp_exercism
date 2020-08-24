@@ -2,7 +2,6 @@
 #include <vector>
 
 namespace prime_factors {
-using namespace std;
-vector<int> primes(int);
-vector<int> of(int);
+std::vector<int> primes(int);
+std::vector<int> of(int);
 }  // namespace prime_factors

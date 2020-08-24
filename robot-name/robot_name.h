@@ -3,15 +3,14 @@
 #include <vector>
 
 namespace robot_name {
-static std::vector<std::string> used_names;
 class robot {
  private:
-  robot(const robot&);
-  robot& operator=(const robot&);
-  std::string name_ = "";
+  std::string name_;
 
  public:
   robot();
+  robot(const robot&) = delete;
+  robot& operator=(const robot&) = delete;
   std::string name() const&;
   void reset();
 };

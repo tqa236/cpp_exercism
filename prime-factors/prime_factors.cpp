@@ -2,13 +2,9 @@
 
 #include <math.h>
 
-#include <iostream>
-
-using namespace std;
-
-vector<int> prime_factors::primes(int number) {
-  vector<int> primes;
-  vector<int> numbers;
+std::vector<int> prime_factors::primes(int number) {
+  std::vector<int> primes;
+  std::vector<int> numbers;
   for (int i = 1; i <= number; i++) {
     numbers.push_back(i);
   }
@@ -23,10 +19,10 @@ vector<int> prime_factors::primes(int number) {
   return primes;
 }
 
-vector<int> prime_factors::of(int number) {
-  vector<int> factors;
-  vector<int> primes = prime_factors::primes((int)sqrt(number) + 1);
-  for (auto const& prime : primes) {
+std::vector<int> prime_factors::of(int number) {
+  std::vector<int> factors;
+  std::vector<int> primes = prime_factors::primes((int)sqrt(number) + 1);
+  for (auto prime : primes) {
     while (number % prime == 0) {
       factors.push_back(prime);
       number = number / prime;
