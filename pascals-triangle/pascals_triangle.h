@@ -1,8 +1,6 @@
 #pragma once
 #include <vector>
 
-using std::vector;
-
 namespace pascals_triangle {
-vector<vector<int>> generate_rows(int);
+std::vector<std::vector<int>> generate_rows(int num_row);
 }
