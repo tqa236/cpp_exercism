@@ -2,23 +2,28 @@
 #include <algorithm>
 
 namespace anagram {
-std::tuple<std::string, std::string> anagram::process_word(
-    std::string const& word) {
-  auto lower_word_ = word;
-  transform(lower_word_.begin(), lower_word_.end(), lower_word_.begin(),
-            ::tolower);
-  auto normalized_word_ = lower_word_;
-  sort(normalized_word_.begin(), normalized_word_.end());
-  return make_tuple(lower_word_, normalized_word_);
+anagram::anagram(std::string const& word) {
+  std::tuple<std::string, std::string> processed_words = process_word(word);
+  std::tie(lower_word, normalized_word) = processed_words;
 }
-std::vector<std::string> anagram::matches(std::vector<std::string> candidates) {
+
+std::tuple<std::string, std::string> anagram::process_word(std::string word) {
+  auto lower_word = std::move(word);
+  std::transform(lower_word.begin(), lower_word.end(), lower_word.begin(),
+                 [](unsigned char c) { return std::tolower(c); });
+  auto normalized_word = lower_word;
+  sort(normalized_word.begin(), normalized_word.end());
+  return make_tuple(std::move(lower_word), std::move(normalized_word));
+}
+std::vector<std::string> anagram::matches(
+    std::vector<std::string> const& candidates) {
   std::vector<std::string> anagrams;
-  for (auto candidate : candidates) {
+  for (auto& candidate : candidates) {
     auto processed_candidates = process_word(candidate);
-    auto lower_candidate = std::get<0>(processed_candidates);
-    auto normalized_candidate = std::get<1>(processed_candidates);
-    if ((normalized_candidate.compare(normalized_word) == 0) &&
-        (lower_candidate.compare(lower_word) != 0)) {
+    std::string lower_candidate, normalized_candidate;
+    std::tie(lower_candidate, normalized_candidate) = processed_candidates;
+    if ((normalized_candidate == normalized_word) &&
+        (lower_candidate != lower_word)) {
       anagrams.push_back(candidate);
     }
   }
