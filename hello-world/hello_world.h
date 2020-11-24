@@ -1,8 +1,7 @@
 // This is an include guard.
 // You could alternatively use '#pragma once'
 // See https://en.wikipedia.org/wiki/Include_guard
-#if !defined(HELLO_WORLD_H)
-#define HELLO_WORLD_H
+#pragma once
 
 // Include the string header so that we have access to 'std::string'
 #include <string>
@@ -18,5 +17,3 @@ namespace hello_world {
 std::string hello();
 
 }  // namespace hello_world
-
-#endif

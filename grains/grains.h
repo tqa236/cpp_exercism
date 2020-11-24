@@ -1,5 +1,4 @@
-#if !defined(GRAINS_H)
-#define GRAINS_H
+#pragma once
 #include <cmath>
 #include <cstdint>
 
@@ -10,5 +9,3 @@ constexpr uint64_t square(const int number) {
 }
 constexpr uint64_t total() { return (uint64_t)pow(2, 64) - 1; }
 }  // namespace grains
-
-#endif
