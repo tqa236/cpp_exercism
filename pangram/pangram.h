@@ -1,12 +1,6 @@
-#ifndef PANGRAM_PANGRAM_H_
-#define PANGRAM_PANGRAM_H_
-
+#pragma once
 #include <string>
 
-using std::string;
-
 namespace pangram {
-bool is_pangram(const string&);
+bool is_pangram(const std::string&);
 }
-
-#endif  // PANGRAM_PANGRAM_H_
