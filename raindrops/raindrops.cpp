@@ -2,13 +2,9 @@
 
 #include <map>
 
-using std::map;
-using std::string;
-using std::to_string;
-
-string raindrops::convert(int number) {
-  map<int, string> drops = {{3, "Pling"}, {5, "Plang"}, {7, "Plong"}};
-  string raindrop = "";
+std::string raindrops::convert(int number) {
+  std::map<int, std::string> drops = {{3, "Pling"}, {5, "Plang"}, {7, "Plong"}};
+  std::string raindrop = "";
 
   for (auto const& drop : drops) {
     if (number % drop.first == 0) {
@@ -17,7 +13,7 @@ string raindrops::convert(int number) {
   }
 
   if (raindrop == "") {
-    return to_string(number);
+    return std::to_string(number);
   }
   return raindrop;
 }

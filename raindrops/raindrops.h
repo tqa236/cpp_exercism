@@ -1,12 +1,7 @@
-#ifndef RAINDROPS_RAINDROPS_H_
-#define RAINDROPS_RAINDROPS_H_
+#pragma once
 
 #include <string>
 
 namespace raindrops {
-using std::string;
-
-string convert(int);
+std::string convert(int);
 }  // namespace raindrops
-
-#endif  // RAINDROPS_RAINDROPS_H_
