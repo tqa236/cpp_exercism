@@ -12,10 +12,9 @@ std::vector<std::vector<int>> pascals_triangle::generate_rows(int num_row) {
   rows.push_back(row);
   for (int i = 2; i <= num_row; i++) {
     row.push_back(0);
-    std::vector<int> row_rev(row);
-    std::reverse(row_rev.begin(), row_rev.end());
+    std::vector<int> row_rev(row.rbegin(), row.rend());
     std::transform(row.begin(), row.end(), row_rev.begin(), row.begin(),
-                   std::plus<int>());
+                   std::plus<>());
     rows.push_back(row);
   }
   return rows;
