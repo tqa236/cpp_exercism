@@ -1,13 +1,12 @@
 #include "prime_factors.h"
 
 #include <cmath>
-#include <numeric>
 
 std::vector<int> prime_factors::primes(int number) {
   std::vector<int> primes;
   std::vector<bool> is_prime(number + 1, 1);
   for (int i = 2; i <= number; i++) {
-    if (is_prime[i] != 0) {
+    if (is_prime[i]) {
       primes.push_back(i);
       for (int j = 2 * i; j <= number; j += i) {
         is_prime[j] = 0;

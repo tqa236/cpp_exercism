@@ -1,11 +1,7 @@
-#include <iostream>
-#include <string>
+#include "acronym.h"
 
-using namespace std;
-
-namespace acronym {
-string acronym(string name) {
-  string acronym_name = "";
+std::string acronym::acronym(std::string name) {
+  std::string acronym_name = "";
   bool flag = true;
   for (char& c : name) {
     if (isalpha(c)) {
@@ -19,4 +15,3 @@ string acronym(string name) {
   }
   return acronym_name;
 }
-}  // namespace acronym

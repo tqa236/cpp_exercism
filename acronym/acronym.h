@@ -1,7 +1,5 @@
 #include <string>
 
-using namespace std;
-
 namespace acronym {
-string acronym(string);
+std::string acronym(std::string);
 }
