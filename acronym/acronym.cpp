@@ -1,12 +1,12 @@
 #include "acronym.h"
 
-std::string acronym::acronym(std::string name) {
+std::string acronym::acronym(const std::string name) {
   std::string acronym_name = "";
   bool flag = true;
-  for (char& c : name) {
-    if (isalpha(c)) {
+  for (unsigned char c : name) {
+    if (std::isalpha(c)) {
       if (flag) {
-        acronym_name += toupper(c);
+        acronym_name += std::toupper(c);
         flag = false;
       }
     } else {
