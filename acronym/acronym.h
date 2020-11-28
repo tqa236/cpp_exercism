@@ -2,5 +2,5 @@
 #include <string>
 
 namespace acronym {
-std::string acronym(const std::string);
+std::string acronym(const std::string&);
 }
