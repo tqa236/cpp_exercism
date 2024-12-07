@@ -46,3 +46,5 @@ CTestTestfile.cmake
 **/.exercism/*
 .tags
 .tags1
+
+.vscode
