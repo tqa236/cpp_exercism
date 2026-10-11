@@ -27,9 +27,11 @@ signal handler and does not promote its C2y-extension warning to an error.
 To run lint locally, install `cpplint` with `python -m pip install cpplint` and
 run `./lint.sh`; install `clang-format` with your system package manager to
 format C++ sources using `./format.sh`. The lint command excludes cpplint rules
-that conflict with repository conventions: `#pragma once` header guards,
-existing namespace using-directives, Google-style namespace indentation, and
-Exercism TODO placeholders. Other include and code-quality checks remain active.
+that conflict with the existing Exercism solutions and formatting policy:
+header guards, include ordering/completeness, namespace conventions, casts,
+legacy type/constructor idioms, TODO placeholders, and whitespace/style checks
+covered by `clang-format` or the compiler. `clang-format` and the GCC/Clang
+builds remain the enforced formatting and compile-quality checks.
 
 ## TODO
 

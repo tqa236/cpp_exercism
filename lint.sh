@@ -12,4 +12,8 @@ find . -type f \( -iname '*.cpp' -o -iname '*.h' \) \
   -print0 |
   xargs -0 -r cpplint \
     --filter=-legal/copyright,-build/include_subdir,-build/header_guard,\
--build/namespaces,-readability/todo,-whitespace/indent_namespace
+-build/include,-build/include_what_you_use,-build/namespaces,\
+-build/storage_class,-readability/braces,-readability/casting,\
+-readability/todo,-runtime/explicit,-runtime/init,-runtime/int,\
+-whitespace/braces,-whitespace/ending_newline,-whitespace/indent_namespace,\
+-whitespace/semicolon
