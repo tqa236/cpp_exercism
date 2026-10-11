@@ -21,6 +21,8 @@ install the required Boost development libraries before configuring the
 individual CMake projects. Exercise builds and tests run concurrently, bounded
 by the available CPU cores; failures are collected and reported together after
 all exercises complete.
+Dependabot checks GitHub Actions dependencies weekly and opens pull requests
+when updates are available.
 For compatibility with current glibc and Clang, CI disables Catch's POSIX
 signal handler and does not promote its C2y-extension warning to an error.
 To run lint locally, install `cpplint` with `python -m pip install cpplint` and
