@@ -19,7 +19,9 @@ commands use the checked-in `.clang-format` configuration.
 GitHub Actions checks formatting and `cpplint` on implementation files, then
 builds and runs every exercise's tests with both GCC and Clang. The test jobs
 install the required Boost development libraries before configuring the
-individual CMake projects.
+individual CMake projects. Exercise builds and tests run concurrently, bounded
+by the available CPU cores; failures are collected and reported together after
+all exercises complete.
 For compatibility with current glibc and Clang, CI disables Catch's POSIX
 signal handler and does not promote its C2y-extension warning to an error.
 To run lint locally, install `cpplint` with `python -m pip install cpplint` and

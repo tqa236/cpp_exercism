@@ -65,26 +65,4 @@ jobs:
             libboost-test-dev
 
       - name: Build and run all exercise tests
-        run: |
-          set -euo pipefail
-
-          for cmake_file in */CMakeLists.txt; do
-            [ -f "$cmake_file" ] || continue
-            exercise="${cmake_file%/CMakeLists.txt}"
-            build_dir="$RUNNER_TEMP/cpp-exercism-build/$exercise"
-            cxx_flags="-DCATCH_CONFIG_NO_POSIX_SIGNALS"
-            if [[ "$CXX" == "clang++" ]] &&
-              printf '' | "$CXX" -Werror -Wc2y-extensions -x c++ -fsyntax-only - >/dev/null 2>&1; then
-              cxx_flags+=" -Wno-error=c2y-extensions"
-            fi
-
-            echo "::group::${exercise}"
-            cmake -S "$exercise" -B "$build_dir" \
-              -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
-              -DCMAKE_CXX_COMPILER="$CXX" \
-              -DCMAKE_CXX_FLAGS="$cxx_flags" \
-              -DEXERCISM_RUN_ALL_TESTS=ON
-            cmake --build "$build_dir" --parallel 2 --target "$exercise"
-            "$build_dir/$exercise"
-            echo "::endgroup::"
-          done
+        run: ./ci-test.sh
