@@ -10,4 +10,6 @@ find . -type f \( -iname '*.cpp' -o -iname '*.h' \) \
   ! -path '*test*' \
   ! -path '*Compiler*' \
   -print0 |
-  xargs -0 -r cpplint --filter=-legal/copyright,-build/include_subdir
+  xargs -0 -r cpplint \
+    --filter=-legal/copyright,-build/include_subdir,-build/header_guard,\
+-build/namespaces,-readability/todo,-whitespace/indent_namespace

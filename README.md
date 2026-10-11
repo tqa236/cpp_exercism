@@ -26,7 +26,10 @@ For compatibility with current glibc and Clang, CI disables Catch's POSIX
 signal handler and does not promote its C2y-extension warning to an error.
 To run lint locally, install `cpplint` with `python -m pip install cpplint` and
 run `./lint.sh`; install `clang-format` with your system package manager to
-format C++ sources using `./format.sh`.
+format C++ sources using `./format.sh`. The lint command excludes cpplint rules
+that conflict with repository conventions: `#pragma once` header guards,
+existing namespace using-directives, Google-style namespace indentation, and
+Exercism TODO placeholders. Other include and code-quality checks remain active.
 
 ## TODO
 
