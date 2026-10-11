@@ -11,6 +11,16 @@ Code formatting
 clang-format -i -style=google **/*.cpp **/*.h
 ```
 
+## Continuous integration
+
+GitHub Actions runs `cpplint` on implementation files and builds and runs every
+exercise's tests with both GCC and Clang. The test jobs install the required
+Boost development libraries before configuring the individual CMake projects.
+For compatibility with current glibc and Clang, CI disables Catch's POSIX
+signal handler and does not promote its C2y-extension warning to an error.
+To run lint locally, install `cpplint` with `python -m pip install cpplint` and
+run `./lint.sh`.
+
 ## TODO
 
 -   Fix code coverage problem.
