@@ -10,15 +10,16 @@ std::vector<int> series::digits(std::string number) {
   return digits;
 }
 
-std::vector<std::vector<int>> series::slice(std::string number, int length) {
-  if (number.size() < (unsigned int)length) {
+std::vector<std::string> series::slice(std::string number, int length) {
+  if (length <= 0 || number.empty() ||
+      number.size() < static_cast<std::size_t>(length)) {
     throw std::domain_error("This number is not long enough.");
   }
-  std::vector<int> digits = series::digits(number);
-  std::vector<std::vector<int>> subset;
-  for (unsigned int i = 0; i < number.size() - length + 1; i = i + 1) {
-    subset.push_back(
-        std::vector<int>(digits.begin() + i, digits.begin() + i + length));
+
+  std::vector<std::string> slices;
+  const auto slice_length = static_cast<std::size_t>(length);
+  for (std::size_t start = 0; start <= number.size() - slice_length; ++start) {
+    slices.push_back(number.substr(start, slice_length));
   }
-  return subset;
+  return slices;
 }

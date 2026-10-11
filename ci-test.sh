@@ -51,16 +51,15 @@ printf '%s\0' "${exercises[@]}" |
     build_dir="$CI_BUILD_ROOT/$name"
     log_file="$CI_LOG_ROOT/$name.log"
 
-    if (
-      set -euo pipefail
+    if {
       cmake -S "$exercise" -B "$build_dir" \
         -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
         -DCMAKE_CXX_COMPILER="$CI_CXX" \
         -DCMAKE_CXX_FLAGS="$CI_CXX_FLAGS" \
-        -DEXERCISM_RUN_ALL_TESTS=ON
-      cmake --build "$build_dir" --parallel 1 --target "$name"
-      "$build_dir/$name"
-    ) >"$log_file" 2>&1; then
+        -DEXERCISM_RUN_ALL_TESTS=ON \
+        && cmake --build "$build_dir" --parallel 1 --target "$name" \
+        && "$build_dir/$name"
+    } >"$log_file" 2>&1; then
       printf "0\n" > "$CI_RESULT_ROOT/$name"
     else
       status=$?
