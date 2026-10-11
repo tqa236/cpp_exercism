@@ -1,4 +1,5 @@
 #include "crypto_square.h"
+
 #include <algorithm>
 #include <cmath>
 

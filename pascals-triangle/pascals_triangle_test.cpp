@@ -11,7 +11,6 @@ TEST_CASE("zero_rows") {
   REQUIRE(expected == actual);
 }
 
-
 TEST_CASE("single_row") {
   const std::vector<std::vector<int>> expected{{1}};
 
@@ -88,5 +87,3 @@ TEST_CASE("ten_rows") {
 
   REQUIRE(expected == actual);
 }
-
-

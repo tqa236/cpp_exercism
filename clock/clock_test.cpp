@@ -184,7 +184,6 @@ TEST_CASE("time_tests") {
   }
 }
 
-
 TEST_CASE("add_tests") {
   for (addTest a : addCases) {
     const auto actual =
@@ -210,4 +209,3 @@ TEST_CASE("equal_tests") {
     }
   }
 }
-

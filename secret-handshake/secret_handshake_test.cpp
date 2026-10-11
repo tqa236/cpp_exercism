@@ -56,6 +56,3 @@ TEST_CASE("reverse_all_possible_actions") {
 TEST_CASE("do_nothing_for_zero") {
   REQUIRE(vector<string>{} == secret_handshake::commands(0));
 }
-
-
-

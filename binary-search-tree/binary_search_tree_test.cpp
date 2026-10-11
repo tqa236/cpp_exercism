@@ -9,7 +9,7 @@ template <typename T>
 using tree_ptr = typename std::unique_ptr<binary_tree::binary_tree<T>>;
 
 template <typename T>
-static void test_leaf(const tree_ptr<T> &tree, const T &data, bool has_left,
+static void test_leaf(const tree_ptr<T>& tree, const T& data, bool has_left,
                       bool has_right) {
   BOOST_REQUIRE_EQUAL(data, tree->data());
   BOOST_REQUIRE_EQUAL((bool)tree->left(), has_left);
@@ -17,7 +17,7 @@ static void test_leaf(const tree_ptr<T> &tree, const T &data, bool has_left,
 }
 
 template <typename T>
-static tree_ptr<T> make_tree(const std::vector<T> &data) {
+static tree_ptr<T> make_tree(const std::vector<T>& data) {
   if (data.empty()) return tree_ptr<T>(nullptr);
 
   auto data_iter = data.begin();
@@ -35,8 +35,6 @@ BOOST_AUTO_TEST_CASE(data_is_retained) {
   auto tested = make_tree<uint32_t>({4});
   test_leaf<uint32_t>(tested, 4, false, false);
 }
-
-
 
 BOOST_AUTO_TEST_CASE(smaller_number_at_left_node) {
   auto tested = make_tree<uint32_t>({4, 2});
@@ -77,7 +75,7 @@ BOOST_AUTO_TEST_CASE(can_create_complex_tree) {
 // You can get more details here: http://www.cplusplus.com/reference/iterator/
 
 template <typename T>
-static void test_sort(const tree_ptr<T> &tree, const std::vector<T> &expected) {
+static void test_sort(const tree_ptr<T>& tree, const std::vector<T>& expected) {
   BOOST_REQUIRE_EQUAL_COLLECTIONS(tree->begin(), tree->end(), expected.begin(),
                                   expected.end());
 }
@@ -125,5 +123,3 @@ BOOST_AUTO_TEST_CASE(can_sort_complex_tree_strings) {
           {"A", "few", "random", "strings", "that", "should", "be", "sorted"}),
       {"A", "be", "few", "random", "should", "sorted", "strings", "that"});
 }
-
-

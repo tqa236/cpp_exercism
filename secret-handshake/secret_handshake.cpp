@@ -1,10 +1,11 @@
 #include "secret_handshake.h"
+
 #include <algorithm>
 #include <array>
 
 namespace secret_handshake {
-static const std::array<const char *, 4> actions{"wink", "double blink",
-                                                 "close your eyes", "jump"};
+static const std::array<const char*, 4> actions{"wink", "double blink",
+                                                "close your eyes", "jump"};
 std::vector<std::string> commands(unsigned int code) {
   std::vector<std::string> selected_actions;
   for (long unsigned int i = 0; i != actions.size(); i++) {

@@ -12,7 +12,6 @@ TEST_CASE("reading_empty_buffer_should_fail") {
   REQUIRE_THROWS_AS(buffer.read(), std::domain_error);
 }
 
-
 TEST_CASE("can_read_an_item_just_written") {
   circular_buffer::circular_buffer<int> buffer(1);
 
@@ -207,4 +206,3 @@ TEST_CASE("check_correctness_with_string_type") {
   expected = "banana";
   REQUIRE(expected == buffer.read());
 }
-

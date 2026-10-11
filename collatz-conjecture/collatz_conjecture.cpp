@@ -1,4 +1,5 @@
 #include "collatz_conjecture.h"
+
 #include <stdexcept>
 
 int collatz_conjecture::steps(int number) {

@@ -10,7 +10,6 @@ TEST_CASE("_1_yields_empty") {
   REQUIRE(expected == actual);
 }
 
-
 TEST_CASE("_2_yields_2") {
   const std::vector<int> expected{2};
 
@@ -82,4 +81,3 @@ TEST_CASE("_901255_yields_5_17_23_461") {
 
   REQUIRE(expected == actual);
 }
-

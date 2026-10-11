@@ -4,7 +4,6 @@
 
 TEST_CASE("hex_1_is_decimal_1") { REQUIRE(0x1 == hexadecimal::convert("1")); }
 
-
 TEST_CASE("hex_c_is_decimal_12") { REQUIRE(0xc == hexadecimal::convert("c")); }
 
 TEST_CASE("hex_10_is_decimal_16") {
@@ -32,4 +31,3 @@ TEST_CASE("black") { REQUIRE(0x000000 == hexadecimal::convert("000000")); }
 TEST_CASE("white") { REQUIRE(0xffffff == hexadecimal::convert("ffffff")); }
 
 TEST_CASE("yellow") { REQUIRE(0xffff00 == hexadecimal::convert("ffff00")); }
-

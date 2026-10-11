@@ -25,7 +25,6 @@ TEST_CASE("has_a_name") {
   REQUIRE(validate_name(robot.name()));
 }
 
-
 TEST_CASE("name_is_the_same_each_time") {
   const robot_name::robot robot;
 
@@ -60,4 +59,3 @@ TEST_CASE("exhausting_digits_yields_different_names") {
     names.insert(robot.name());
   }
 }
-

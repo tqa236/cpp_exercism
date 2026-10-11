@@ -8,7 +8,6 @@
 
 TEST_CASE("zero_steps_for_one") { REQUIRE(0 == collatz_conjecture::steps(1)); }
 
-
 TEST_CASE("divide_if_even") { REQUIRE(4 == collatz_conjecture::steps(16)); }
 
 TEST_CASE("even_and_odd_steps") { REQUIRE(9 == collatz_conjecture::steps(12)); }

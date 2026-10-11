@@ -15,7 +15,6 @@ TEST_CASE("no_matches") {
   REQUIRE(expected == matches);
 }
 
-
 TEST_CASE("detects_two_anagrams") {
   auto subject = anagram::anagram("master");
   auto matches = subject.matches({"stream", "pigeon", "maters"});
@@ -120,4 +119,3 @@ TEST_CASE("words_other_than_themselves_can_be_anagrams") {
 
   REQUIRE(expected == matches);
 }
-

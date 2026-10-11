@@ -11,7 +11,7 @@ class space_age {
   space_age() = default;
   space_age(long p_age) { age = p_age; };
   long seconds() const;
-  double on_planet(string const &) const;
+  double on_planet(string const&) const;
   constexpr double on_earth() const noexcept { return age / 31557600.0; }
   constexpr double on_mercury() const noexcept {
     return age / (31557600.0 * 0.2408467);

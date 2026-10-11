@@ -1,5 +1,7 @@
 #include "triangle.h"
+
 #include <stdexcept>
+
 #include "test/catch.hpp"
 
 TEST_CASE("equilateral_triangles_have_equal_sides") {

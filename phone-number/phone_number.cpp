@@ -1,4 +1,5 @@
 #include "phone_number.h"
+
 #include <stdexcept>
 
 using std::domain_error;

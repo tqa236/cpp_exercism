@@ -1,4 +1,5 @@
 #include "atbash_cipher.h"
+
 #include <algorithm>
 
 std::string atbash_cipher::transform(const std::string& text, bool add_space) {

@@ -3,5 +3,5 @@
 
 namespace gigasecond {
 using boost::posix_time::ptime;
-ptime advance(const ptime &);
+ptime advance(const ptime&);
 }  // namespace gigasecond

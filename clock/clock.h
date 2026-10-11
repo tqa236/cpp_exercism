@@ -27,9 +27,9 @@ class clock {
     return stream.str();
   }
 
-  bool operator==(const clock &c) const {
+  bool operator==(const clock& c) const {
     return (c.hour == hour && c.minute == minute);
   }
-  bool operator!=(const clock &c) const { return !(*this == c); }
+  bool operator!=(const clock& c) const { return !(*this == c); }
 };
 }  // namespace date_independent

@@ -1,4 +1,5 @@
 #include "isogram.h"
+
 #include <bitset>
 
 bool isogram::is_isogram(const std::string& phrase) {

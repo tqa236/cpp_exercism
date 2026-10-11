@@ -12,7 +12,6 @@ TEST_CASE("single_digit_strings_can_not_be_valid") {
   REQUIRE(expected == actual);
 }
 
-
 TEST_CASE("a_single_zero_is_invalid") {
   const bool actual = luhn::valid("0");
 
@@ -140,4 +139,3 @@ TEST_CASE("strings_with_non_digits_is_invalid") {
 
   REQUIRE(expected == actual);
 }
-

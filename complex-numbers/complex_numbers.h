@@ -13,7 +13,7 @@ class Complex {
   double abs() const;
   Complex operator+(Complex const&) const;
   Complex operator-(Complex const&) const;
-  Complex operator*(Complex const&)const;
+  Complex operator*(Complex const&) const;
   Complex operator/(Complex const&) const;
   Complex conj() const;
   Complex exp() const;

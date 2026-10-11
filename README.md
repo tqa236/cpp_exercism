@@ -8,18 +8,23 @@ Learn C++ in a TDD environment with Exercism
 Code formatting
 
 ```bash
-clang-format -i -style=google **/*.cpp **/*.h
+./format.sh
 ```
+
+Run `./format.sh --check` to check formatting without changing files. Both
+commands use the checked-in `.clang-format` configuration.
 
 ## Continuous integration
 
-GitHub Actions runs `cpplint` on implementation files and builds and runs every
-exercise's tests with both GCC and Clang. The test jobs install the required
-Boost development libraries before configuring the individual CMake projects.
+GitHub Actions checks formatting and `cpplint` on implementation files, then
+builds and runs every exercise's tests with both GCC and Clang. The test jobs
+install the required Boost development libraries before configuring the
+individual CMake projects.
 For compatibility with current glibc and Clang, CI disables Catch's POSIX
 signal handler and does not promote its C2y-extension warning to an error.
 To run lint locally, install `cpplint` with `python -m pip install cpplint` and
-run `./lint.sh`.
+run `./lint.sh`; install `clang-format` with your system package manager to
+format C++ sources using `./format.sh`.
 
 ## TODO
 

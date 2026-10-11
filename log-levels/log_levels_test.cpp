@@ -7,83 +7,74 @@
 
 using namespace std;
 
-TEST_CASE("Error message", "[task_1]")
-{
-    const string actual = log_line::message("[ERROR]: Stack overflow");
+TEST_CASE("Error message", "[task_1]") {
+  const string actual = log_line::message("[ERROR]: Stack overflow");
 
-    const string expected{"Stack overflow"};
+  const string expected{"Stack overflow"};
 
-    REQUIRE(expected == actual);
+  REQUIRE(expected == actual);
 }
 
-TEST_CASE("Warning message", "[task_1]")
-{
-    const string actual = log_line::message("[WARNING]: Disk almost full");
+TEST_CASE("Warning message", "[task_1]") {
+  const string actual = log_line::message("[WARNING]: Disk almost full");
 
-    const string expected{"Disk almost full"};
+  const string expected{"Disk almost full"};
 
-    REQUIRE(actual == expected);
+  REQUIRE(actual == expected);
 }
 
-TEST_CASE("Info message", "[task_1]")
-{
-    const string actual = log_line::message("[INFO]: File moved");
+TEST_CASE("Info message", "[task_1]") {
+  const string actual = log_line::message("[INFO]: File moved");
 
-    const string expected{"File moved"};
+  const string expected{"File moved"};
 
-    REQUIRE(actual == expected);
+  REQUIRE(actual == expected);
 }
 
-TEST_CASE("Error log level", "[task_2]")
-{
-    const string actual = log_line::log_level("[ERROR]: Disk full");
+TEST_CASE("Error log level", "[task_2]") {
+  const string actual = log_line::log_level("[ERROR]: Disk full");
 
-    const string expected{"ERROR"};
+  const string expected{"ERROR"};
 
-    REQUIRE(actual == expected);
+  REQUIRE(actual == expected);
 }
 
-TEST_CASE("Warning log level", "[task_2]")
-{
-    const string actual = log_line::log_level("[WARNING]: Unsafe password");
+TEST_CASE("Warning log level", "[task_2]") {
+  const string actual = log_line::log_level("[WARNING]: Unsafe password");
 
-    const string expected{"WARNING"};
+  const string expected{"WARNING"};
 
-    REQUIRE(actual == expected);
+  REQUIRE(actual == expected);
 }
 
-TEST_CASE("Info log level", "[task_2]")
-{
-    const string actual = log_line::log_level("[INFO]: Timezone changed");
+TEST_CASE("Info log level", "[task_2]") {
+  const string actual = log_line::log_level("[INFO]: Timezone changed");
 
-    const string expected{"INFO"};
+  const string expected{"INFO"};
 
-    REQUIRE(actual == expected);
+  REQUIRE(actual == expected);
 }
 
-TEST_CASE("Error reformat", "[task_3]")
-{
-    const string actual = log_line::reformat("[ERROR]: Segmentation fault");
+TEST_CASE("Error reformat", "[task_3]") {
+  const string actual = log_line::reformat("[ERROR]: Segmentation fault");
 
-    const string expected{"Segmentation fault (ERROR)"};
+  const string expected{"Segmentation fault (ERROR)"};
 
-    REQUIRE(actual == expected);
+  REQUIRE(actual == expected);
 }
 
-TEST_CASE("Warning reformat", "[task_3]")
-{
-    const string actual = log_line::reformat("[WARNING]: Decreased performance");
+TEST_CASE("Warning reformat", "[task_3]") {
+  const string actual = log_line::reformat("[WARNING]: Decreased performance");
 
-    const string expected{"Decreased performance (WARNING)"};
+  const string expected{"Decreased performance (WARNING)"};
 
-    REQUIRE(actual == expected);
+  REQUIRE(actual == expected);
 }
 
-TEST_CASE("Info reformat", "[task_3]")
-{
-    const string actual = log_line::reformat("[INFO]: Disk defragmented");
+TEST_CASE("Info reformat", "[task_3]") {
+  const string actual = log_line::reformat("[INFO]: Disk defragmented");
 
-    const string expected{"Disk defragmented (INFO)"};
+  const string expected{"Disk defragmented (INFO)"};
 
-    REQUIRE(actual == expected);
+  REQUIRE(actual == expected);
 }

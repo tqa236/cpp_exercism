@@ -56,5 +56,3 @@ BOOST_AUTO_TEST_CASE(complex_latex_expression) {
       bracket_push::check("\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ "
                           "\\mathrm{e}^{x} &... x^2 \\end{array}\\right)"));
 }
-
-
